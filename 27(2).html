@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Order Summary</title>
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #dfe7ff;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 350px;
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+/* Top Image */
+.card-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Content */
+.content {
+  padding: 25px;
+  text-align: center;
+}
+
+.content h2 {
+  margin-bottom: 15px;
+}
+
+.content p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Plan Box */
+.plan {
+  background: #eef1ff;
+  border-radius: 10px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.plan img {
+  width: 40px;
+}
+
+.plan div {
+  flex: 1;
+  text-align: left;
+  font-size: 14px;
+}
+
+.plan a {
+  color: blue;
+  font-size: 13px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Button */
+.pay-btn {
+  width: 100%;
+  padding: 12px;
+  background: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  margin-bottom: 15px;
+  /* box-shadow: inset; */
+  box-shadow: #555;
+}
+
+.pay-btn:hover {
+  background: #4338ca;
+  box-shadow: inset;
+}
+
+/* Cancel */
+.cancel {
+  font-size: 13px;
+  color: gray;
+  cursor: pointer;
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="card">
+
+      <img class="card-img"
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFB24UKMkHFZnrXcON53nf5ud58FIbE4kkVQ&s" />
+
+      <div class="content">
+        <h2>Order Summary</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Dolores neque at ipsam sit ipsa beatae id omnis.
+        </p>
+
+        <div class="plan">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKYcHxhS2kXcwbM0yxHY2WFxi1qHOHLa6Vbg&s">
+          <div>
+            <strong>Annual Plan</strong>
+            <span>₹599.9/year</span>
+          </div>
+          <a href="#">Change</a>
+        </div>
+
+        <button class="pay-btn">Proceed to Payment</button>
+        <p class="cancel">Cancel Order</p>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card {
+  background-color: rgb(240, 240, 243);
+  border: 4px solid black;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+#upper {
+  height: 30%;
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.textbox {
+  padding: 20px;
+  text-align: center;
+}
+
+#amountbox {
+  width: 80%;
+  background-color: rgb(51, 149, 192);
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFB24UKMkHFZnrXcON53nf5ud58FIbE4kkVQ&s"/>
+            <div class="textbox">
+            </div>
+            <div class="amountbox">
+            </div>
+            <button id="paymentbutton">Proceed to Payment</button> 
+            <div class="cancelbox">
+                <a href="#">Cancel Order</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html> -->

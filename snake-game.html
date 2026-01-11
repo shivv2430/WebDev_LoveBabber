@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Snake Game</title>
+  <style>
+    body {
+  text-align: center;
+  font-family: Arial;
+  background-color: #f4f4f4;
+}
+
+canvas {
+  background-color: black;
+  border: 4px solid #333;
+}
+
+  </style>
+</head>
+<body>
+
+  <h1>Snake Game 🐍</h1>
+  <canvas id="game" width="400" height="400"></canvas>
+  <p id="score">Score: 0</p>
+  <p id="msg"></p>
+
+  <script >
+    const canvas = document.getElementById("game");
+const ctx = canvas.getContext("2d");
+
+const box = 20;
+let snake = [{ x: 200, y: 200 }];
+let direction = "RIGHT";
+
+let food = {
+  x: Math.floor(Math.random() * 20) * box,
+  y: Math.floor(Math.random() * 20) * box
+};
+
+let score = 0;
+
+document.addEventListener("keydown", changeDirection);
+
+function changeDirection(event) {
+  if (event.key === "ArrowUp" && direction !== "DOWN") direction = "UP";
+  else if (event.key === "ArrowDown" && direction !== "UP") direction = "DOWN";
+  else if (event.key === "ArrowLeft" && direction !== "RIGHT") direction = "LEFT";
+  else if (event.key === "ArrowRight" && direction !== "LEFT") direction = "RIGHT";
+}
+
+function draw() {
+  ctx.clearRect(0, 0, 400, 400);
+
+  // Draw snake
+  for (let part of snake) {
+    ctx.fillStyle = "lime";
+    ctx.fillRect(part.x, part.y, box, box);
+  }
+
+  // Draw food
+  ctx.fillStyle = "red";
+  ctx.fillRect(food.x, food.y, box, box);
+
+  let head = { ...snake[0] };
+
+  if (direction === "UP") head.y -= box;
+  if (direction === "DOWN") head.y += box;
+  if (direction === "LEFT") head.x -= box;
+  if (direction === "RIGHT") head.x += box;
+
+  // Game Over conditions
+  if (
+    head.x < 0 || head.y < 0 ||
+    head.x >= 400 || head.y >= 400 ||
+    collision(head)
+  ) {
+    document.getElementById("msg").innerHTML = "Game Over ❌";
+    return;
+  }
+
+  snake.unshift(head);
+
+  if (head.x === food.x && head.y === food.y) {
+    score++;
+    document.getElementById("score").innerHTML = "Score: " + score;
+    food = {
+      x: Math.floor(Math.random() * 20) * box,
+      y: Math.floor(Math.random() * 20) * box
+    };
+  } else {
+    snake.pop();
+  }
+}
+
+function collision(head) {
+  for (let part of snake) {
+    if (head.x === part.x && head.y === part.y) return true;
+  }
+  return false;
+}
+
+setInterval(draw, 150);
+
+  </script>
+</body>
+</html>

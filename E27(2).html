@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Second card</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            background-color: lightblue;
+            display: flex;
+            height: 700px;
+            width: 1420px;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 0;}
+
+            /* background-color: rgb(240, 240, 243);
+            border: 4px solid black;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow: hidden;
+        } */
+
+        .card {
+            background-color: rgb(240, 240, 243);
+            border: 4px solid black;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            height: 450px;
+            width: 350px;
+            align-items: center;
+             border-top-left-radius: 24px;
+            border-top-right-radius: 24px;
+        }
+
+        #upper {
+            height: 30%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            display: block;
+            display: block;
+            object-fit: cover;
+            
+        }
+
+        #lower {
+            height: 50px;
+            width: 50px;
+            background-color: white;
+        }
+
+        #amountbox {
+            height: 10%;
+            width: 80%;
+            background-color: rgb(51, 149, 192);
+            border-radius: 10px;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+          }
+
+        .textbox {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            text-align: center;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <img id="upper"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFB24UKMkHFZnrXcON53nf5ud58FIbE4kkVQ&s" />
+            <div class="textbox">
+                <h2>Order Summary</h2>
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores
+                    neque at ipsam sit ipsa beatae id omnis non corporis, veniam illum
+                    sapiente. Rem velit inventore dignissimos cum dolorum numquam omnis!
+                </p>
+            </div>
+            <div id="amountbox">
+                <img id="lower"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKYcHxhS2kXcwbM0yxHY2WFxi1qHOHLa6Vbg&s">
+                </img>
+                <div>
+                    <p>Annual Plan</p>
+                    <p>599.9/year</p>
+                </div>
+                <a href="#">change</a>
+                <button>proceed to pay</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

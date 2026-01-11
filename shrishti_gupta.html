@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velocity F1 Store</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+        /* Header */
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem 0;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        ul {
+            list-style: none;
+            display: flex;
+        }
+        li {
+            margin-left: 1rem;
+        }
+        .nav-link {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .nav-link:hover, .nav-link.active {
+            background-color: #555;
+        }
+        #cartCount {
+            background-color: #007bff;
+            color: #fff;
+            padding: 0.2rem 0.5rem;
+            border-radius: 50%;
+            font-size: 0.8rem;
+        }
+        /* Sections */
+        .page {
+            display: none;
+            padding: 2rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .page.active {
+            display: block;
+        }
+        .hero {
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            padding: 4rem 1rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .hero span {
+            color: #ffd700;
+        }
+        .hero p {
+            font-size: 1.2rem;
+        }
+        /* Shop */
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .product-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .product-info {
+            padding: 1rem;
+        }
+        .rating {
+            color: #ffd700;
+            margin: 0.5rem 0;
+        }
+        .price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #007bff;
+            margin: 0.5rem 0;
+        }
+        .features {
+            list-style: none;
+            margin: 1rem 0;
+        }
+        .features li {
+            margin-bottom: 0.5rem;
+        }
+        .product-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+        button {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .cart-btn {
+            background-color: #28a745;
+            color: #fff;
+        }
+        .cart-btn:hover {
+            background-color: #218838;
+        }
+        .buy {
+            background-color: #dc3545;
+            color: #fff;
+        }
+        .buy:hover {
+            background-color: #c82333;
+        }
+        /* Cart */
+        .cart-container {
+            display: flex;
+            gap: 2rem;
+        }
+        .cart-items {
+            flex: 1;
+        }
+        .cart-summary {
+            background: #fff;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            width: 300px;
+        }
+        .summary-item, .summary-total {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+        .summary-total {
+            font-weight: bold;
+            font-size: 1.2rem;
+            border-top: 1px solid #ddd;
+            padding-top: 0.5rem;
+        }
+        .checkout-btn {
+            width: 100%;
+            background-color: #007bff;
+            color: #fff;
+            padding: 0.75rem;
+            font-size: 1rem;
+        }
+        .checkout-btn:hover {
+            background-color: #0056b3;
+        }
+        /* Checkout */
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+        input, select {
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .pay {
+            margin-top: 1rem;
+            background-color: #28a745;
+            color: #fff;
+            padding: 0.75rem;
+            font-size: 1rem;
+        }
+        .pay:hover {
+            background-color: #218838;
+        }
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(9, 47, 153, 0.4);
+        }
+        .modal-content {
+            background-color: #344ec1;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 8px;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close:hover {
+            color: #3022c6;
+        }
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #333;
+            color: #fff;
+            margin-top: 2rem;
+        }
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+            }
+            ul {
+                margin-top: 1rem;
+            }
+            .cart-container {
+                flex-direction: column;
+            }
+            .cart-summary {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo">Velocity F1 Store</div>
+    <ul>
+      <li><a  class="nav-link active" link="home">Home</a></li>
+      <li><a  class="nav-link"  link="shop">Shop</a></li>
+      <li><a  class="nav-link"  link="cart">Cart</a></li>
+      <li><a class="nav-link" link="checkout">Checkout</a></li>
+      <li><span class="cart-badge"  id="cartCount">0</span></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero page active" id="home">
+  <h1>Velocity <span>F1 Racing Store</span></h1>
+  <p>Shop elite Formula One racing machines. Built for professionals. Designed for dominance.</p>
+</section>
+
+<section id="shop" class="page">
+  <div class="container">
+    <h2>Featured Racing Cars</h2>
+    <div class="products">
+
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a" height="200px",width="200px">
+        <div class="product-info">
+          <h3>Velocity V1</h3>
+          <div class="rating">★★★★★ (4.9)</div>
+          <div class="price">₹2,50,00,000</div>
+          <ul class="features">
+            <li>1.6L V6 Turbo Hybrid</li>
+            <li>350 km/h Top Speed</li>
+            <li>Track Certified</li>
+          </ul>
+          <div class="product-actions">
+            <button class="cart-btn" >Add to Cart</button>
+            <button class="buy" >Buy Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1525609004556-c46c7d6cf023"  height="200px",width="200px">
+        <div class="product-info">
+          <h3>Velocity V2</h3>
+          <div class="rating">★★★★☆ (4.7)</div>
+          <div class="price">₹3,80,00,000</div>
+          <ul class="features">
+            <li>Enhanced Aerodynamics</li>
+            <li>ERS Power Boost</li>
+            <li>Carbon Fiber Monocoque</li>
+          </ul>
+          <div class="product-actions">
+            <button class="cart-btn" >Add to Cart</button>
+            <button class="buy" >Buy Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1519682337058-a94d519337bc"  height="200px",width="200px">
+        <div class="product-info">
+          <h3>Velocity Pro</h3>
+          <div class="rating">★★★★★ (5.0)</div>
+          <div class="price">₹5,50,00,000</div>
+          <ul class="features">
+            <li>AI Telemetry System</li>
+            <li>Ultra Lightweight Chassis</li>
+            <li>Maximum Downforce</li>
+          </ul>
+          <div class="product-actions">
+            <button class="cart-btn" >Add to Cart</button>
+            <button class="buy" >Buy Now</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="cart" class="page cart-page">
+  <div class="container">
+    <h2>Shopping Cart</h2>
+    <div class="cart-container">
+      <div class="cart-items">
+        <div id="cartItemsList"></div>
+      </div>
+      <div class="cart-summary">
+        <div class="summary-item">
+          <span>Subtotal:</span>
+          <span>₹<span id="subtotal">0</span></span>
+        </div>
+        <div class="summary-item">
+          <span>Shipping:</span>
+          <span id="shipping">Free</span>
+        </div>
+        <div class="summary-item">
+          <span>Tax (5%):</span>
+          <span>₹<span id="tax">0</span></span>
+        </div>
+        <div class="summary-total">
+          <span>Total:</span>
+          <span>₹<span id="total">0</span></span>
+        </div>
+        <button class="checkout-btn">Proceed to Checkout</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="checkout" class="page">
+  <div class="container">
+    <h2>Checkout</h2>
+    <div style="max-width:600px;margin:auto;background:#12172b;padding:2.5rem;border-radius:20px;box-shadow:0 0 30px rgba(8,217,214,0.18);">
+      <form onsubmit="processPayment(event)">
+        <label>Full Name</label>
+        <input type="text" required>
+
+        <label>Email</label>
+        <input type="email" required>
+
+        <label>Phone</label>
+        <input type="tel" required>
+
+        <label>Delivery Address</label>
+        <input type="text" required>
+
+        <label>Payment Method</label>
+        <select required>
+          <option>Credit / Debit Card</option>
+          <option>Net Banking</option>
+          <option>UPI</option>
+        </select>
+
+        <button type="submit" class="pay">Proceed to Payment</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<div class="modal" id="buyModal">
+  <div class="modal-content">
+    <span class="close" >&times;</span>
+    <h3>Quick Checkout – <span id="carName"></span></h3>
+    <p style="color:#9fa6ff;margin-bottom:1.5rem;">Price: ₹<span id="carPrice">0</span></p>
+    <form onsubmit="processPayment(event)">
+      <label>Full Name</label>
+      <input type="text" required>
+
+      <label>Email</label>
+      <input type="email" required>
+
+      <label>Phone</label>
+      <input type="tel" required>
+
+      <label>Payment Method</label>
+      <select>
+        <option>Credit / Debit Card</option>
+        <option>Net Banking</option>
+        <option>UPI</option>
+      </select>
+
+      <button class="pay">Proceed to Payment</button>
+    </form>
+  </div>
+</div>
+
+<footer>
+  <p>©️ 2025 Velocity F1 Store | Premium Racing Commerce Platform</p>
+</footer>
+
+<script>
+    // Cart functionality
+    let cart = [];
+    let cartCount = 0;
+
+    function updateCartCount() {
+        document.getElementById('cartCount').textContent = cartCount;
+    }
+
+    function addToCart(productName, price) {
+        cart.push({ name: productName, price: parseFloat(price.replace(/,/g, '')) });
+        cartCount++;
+        updateCartCount();
+        updateCartDisplay();
+    }
+
+    function updateCartDisplay() {
+        const cartItemsList = document.getElementById('cartItemsList');
+        cartItemsList.innerHTML = '';
+        let subtotal = 0;
+        cart.forEach(item => {
+            subtotal += item.price;
+            const itemDiv = document.createElement('div');
+            itemDiv.textContent = `${item.name} - ₹${item.price.toLocaleString()}`;
+            cartItemsList.appendChild(itemDiv);
+        });
+        const tax = subtotal * 0.05;
+        const total = subtotal + tax;
+        document.getElementById('subtotal').textContent = subtotal.toLocaleString();
+        document.getElementById('tax').textContent = tax.toLocaleString();
+        document.getElementById('total').textContent = total.toLocaleString();
+    }
+
+    // Navigation
+    function showPage(pageId) {
+        document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
+        document.getElementById(pageId).classList.add('active');
+        document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+        document.querySelector(`[link="${pageId}"]`).classList.add('active');
+    }
+
+    // Event listeners
+    document.addEventListener('DOMContentLoaded', () => {
+        // Navigation links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const pageId = link.getAttribute('link');
+                showPage(pageId);
+            });
+        });
+
+        // Add to cart buttons
+        document.querySelectorAll('.cart-btn').forEach((btn, index) => {
+            const productCard = btn.closest('.product-card');
+            const name = productCard.querySelector('h3').textContent;
+            const price = productCard.querySelector('.price').textContent.replace('₹', '');
+            btn.addEventListener('click', () => addToCart(name, price));
+        });
+
+        // Buy now buttons
+        document.querySelectorAll('.buy').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const productCard = btn.closest('.product-card');
+                const name = productCard.querySelector('h3').textContent;
+                const price = productCard.querySelector('.price').textContent.replace('₹', '');
+                document.getElementById('carName').textContent = name;
+                document.getElementById('carPrice').textContent = price.replace(/,/g, '');
+                document.getElementById('buyModal').style.display = 'block';
+            });
+        });
+
+        // Modal close
+        document.querySelector('.close').addEventListener('click', () => {
+            document.getElementById('buyModal').style.display = 'none';
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target == document.getElementById('buyModal')) {
+                document.getElementById('buyModal').style.display = 'none';
+            }
+        });
+    });
+
+    // Dummy payment processing
+    function processPayment(event) {
+        event.preventDefault();
+        alert('Payment processed successfully!');
+        // Reset cart or redirect
+        cart = [];
+        cartCount = 0;
+        updateCartCount();
+        updateCartDisplay();
+        document.getElementById('buyModal').style.display = 'none';
+        showPage('home');
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS-3D_Transforms</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        width: 100%;
+        height: 100%;
+    }
+    .container{
+        padding: 5rem;
+        background-color: rgb(63, 56, 56);
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(3,1fr);
+    }
+    .items{
+         padding: 2rem;
+        height: 250px;
+        width: 250px;
+        background-color:blue ;
+        border: 2px solid black;
+
+    }
+    #Rotate_x:hover{
+        transform: rotateX(45deg);
+    }
+     #Rotate_y:hover{
+        transform: rotateY(45deg);
+    }
+    #Rotate_z:hover{
+        transform: rotateZ(45deg);
+    }
+    #Translate_x:hover{
+        transform: translateX(100px);
+     }
+    #Translate_y:hover{
+        transform: translateY(100px);
+     }
+    #Translate_z:hover{ 
+        transform: perspective(300px) translateZ(100px);
+    }
+    #scale_x:hover{
+        transform: scaleX(1.5) ;
+    }
+    #scale_y:hover{
+          transform: scaleY(1.5) ;
+    }
+    #scale_z:hover{
+          transform: perspective(300px) scaleZ(5) rotateY(20deg) ;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="items" id="Rotate_x">RotateX</div>
+        <div class="items" id="Rotate_y">RotateY</div>
+        <div class="items" id="Rotate_z">RotateZ</div>
+        <div class="items" id="Translate_x">TranslateX</div>
+        <div class="items" id="Translate_y">TranslateY</div>
+        <div class="items" id="Translate_z">TranslateZ</div>
+        <div class="items" id="scale_x">ScaleX</div>
+        <div class="items" id="scale_y">ScaleY</div>
+        <div class="items" id="scale_z">ScaleZ</div>
+       
+    </div>
+</body>
+</html>

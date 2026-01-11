@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <style>
+        .container{
+            background-color: purple;
+            border: 2px solid black;
+            margin: 2px;
+            padding: 5px;
+            height: 800px;
+            width: 1000px;
+        }
+        
+        #A{
+            background-color: whitesmoke;
+            border: rgb(255, 0, 174);
+            height: 200px;
+            width: 500px;
+        }
+        #B{
+            background-color: lightcyan;
+            border: rgb(16, 53, 219);
+             height: 200px;
+            width: 500px;
+        }
+        #C{
+            background-color: lightgoldenrodyellow;
+            border: rgb(241, 15, 15);
+             height: 200px;
+            width: 500px;
+        }
+    </style> -->
+    <style>
+        .container{
+            border: 7px solid black;
+            background-color: bisque;
+            display: flex;
+            flex-direction: row;
+            width: 450px;
+            padding: 2px;
+            margin: 10px;
+        }
+        #boxleft{
+            background-color: aquamarine;
+            border: 1px solid blue;
+            width: 47%;
+            margin: 3px;
+            padding: 2px;
+            display: flex;
+            flex-direction: column;
+        }
+        #boxright{
+            background-color: yellow;
+            border: 1px solid brown;
+            width: 47%;
+             margin: 3px;
+            padding: 2px;
+        }
+        p{
+            border: 1px solid red;
+        }
+        img{
+            width: 170px;
+        }
+        @media (max-width:640px) {
+            .container{flex-direction: column;}
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="container">
+        <div class="text1" id="A">text1</div>
+        <div class="text2" id="B">text2</div>
+        <div class="text3" id="C">text3</div>
+    </div> -->
+    <div class="container">
+        <div id="boxleft">
+            <p>Text1</p>
+              <p>Text2</p>
+        </div>
+        <div id="boxright">
+            <img src="sinchan1.jpeg" alt="">
+        </div>
+    </div>
+</body>
+</html>

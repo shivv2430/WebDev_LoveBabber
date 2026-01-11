@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Insights Card</title>
+   <style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #fbfbfb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* MAIN CARD */
+.main-container {
+    display: flex;
+    width: 90%;
+    max-width: 1200px;
+    height: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: white;
+}
+
+/* LEFT SECTION */
+.left-section {
+    width: 50%;
+    background-color: #4b0f4f;
+    color: white;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.left-section h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.left-section p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    color: #e0d6e6;
+}
+
+/* STATS */
+.stats {
+    display: flex;
+    gap: 30px;
+}
+
+.stat-box h2 {
+    font-size: 28px;
+}
+
+.stat-box span {
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #d1b8d6;
+}
+
+/* RIGHT SECTION */
+.right-section {
+    width: 50%;
+    /* background: linear-gradient(135deg, #020024, #090979, #020024); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* FAKE ILLUSTRATION */
+.illustration {
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+
+.block {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border-radius: 8px;
+}
+
+/* .block-1 {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+} */
+
+/* .block-2 {
+    top: 50px;
+    left: 0;
+    background-color: #4fc3f7;
+} */
+
+/* .block-3 {
+    top: 50px;
+    right: 0;
+    background-color: #7e57c2;
+} */
+#rightimg{
+    width: 100%;
+    height: 100%;
+}
+   </style>
+</head>
+<body>
+
+    <div class="main-container">
+
+        <!-- LEFT SECTION -->
+        <div class="left-section">
+            <h1>
+                Get insights that help <br>
+                your business grow
+            </h1>
+
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Adipisci ipsum edit atque accusantium totam repellendus minus sit.
+                Consequuntur, deleniti dignissimos?
+            </p>
+
+            <div class="stats">
+                <div class="stat-box">
+                    <h2>10K+</h2>
+                    <span>Companies</span>
+                </div>
+
+                <div class="stat-box">
+                    <h2>214</h2>
+                    <span>Paid Users</span>
+                </div>
+
+                <div class="stat-box">
+                    <h2>12M+</h2>
+                    <span>Views</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT SECTION -->
+        <div class="right-section">
+            <img  id="rightimg" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFB24UKMkHFZnrXcON53nf5ud58FIbE4kkVQ&s ">
+            <!-- <div class="illustration">
+                <div class="block block-1"></div>
+                <div class="block block-2"></div>
+                <div class="block block-3"></div>
+            </div> -->
+        </div>
+
+    </div>
+
+</body>
+</html>
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            background-color: aquamarine;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #leftbox{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <img id="rightbox"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFB24UKMkHFZnrXcON53nf5ud58FIbE4kkVQ&s ">
+        </div>
+        <div id="left box">
+            <div><h2> Get inside that help your business grow</h2></div>
+            <div><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores molestias dolor officia nam dolore animi
+                provident possimus ratione labore nemo maiores asperiores aliquid dicta unde autem libero, consequatur,
+                tempore error.</p></div>
+                <div>
+                    <div><h1>10K+</h1>
+                    <p>comments</p></div>
+                    <div><h1>214</h1>
+                    <p>paid users</p></div>
+                    <div><h1>12M+</h1>
+                    <p>views</p></div>
+                </div>
+        </div>
+    </div>
+</body>
+
+</html> -->

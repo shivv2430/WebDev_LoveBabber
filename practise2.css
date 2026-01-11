@@ -1,0 +1,99 @@
+*{
+    margin: auto;
+    padding: auto;
+}
+.main_container{
+    margin: 0;
+    padding: 0;
+    
+    border: 2px solid black;
+    display: grid;
+    background-color: aqua;
+    grid-template-columns: repeat(3,1fr);
+    height: 710px;
+    width: 800px;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    gap: 5px;
+}
+div{
+    display: block;
+}
+.Header{
+    margin: 0;
+    padding:0;
+    background-color: blue;
+    border: 2px solid black;
+    height: 250px;
+    width: 250px;
+    display: block;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    font: 100px ;
+    font-style: italic;
+    font-weight: 100;
+    grid-column: (1,4)
+  
+}
+.article{
+     margin: 0;
+    padding:0;
+    background-color: rgb(95, 95, 109);
+    border: 2px solid black;
+     height: 250px;
+    width: 250px;
+    justify-content: center;
+    align-items: center;
+    display: block;
+    justify-items: center;
+}
+.text1{
+     margin: 0;
+    padding:0;
+    background-color: rgb(74, 74, 109);
+    border: 2px solid black;
+     height: 250px;
+    width: 250px;
+    justify-content: center;
+    align-items: center;
+    display: block;
+     justify-items: center;
+}
+.text2{
+     margin: 0;
+    padding:0;
+    background-color: rgb(114, 114, 176);
+    border: 2px solid black;
+     height: 250px;
+    width: 250px;
+    justify-content: center;
+    align-items: center;
+    display: block;
+     justify-items: center;
+}
+.main{
+     margin: 0;
+    padding:0;
+    background-color: rgb(138, 138, 206);
+    border: 2px solid black;
+     height: 250px;
+    width: 250px;
+    justify-content: center;
+    align-items: center;
+    display: block;
+     justify-items: center;
+}
+.footer{
+     margin: 0;
+    padding:0;
+    background-color: rgb(64, 64, 110);
+    border: 2px solid black;
+     height: 250px;
+    width: 250px;
+    justify-content: center;
+    align-items: center;
+    display: block;
+     justify-items: center;
+}

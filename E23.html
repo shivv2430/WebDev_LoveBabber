@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>animation ka gyan</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        height: 810px;
+        width: 1440px;
+        background-color: beige;
+        border: 5px solid black;
+      }
+      .box {
+        width: 350px;
+        height: 320px;
+        background-color: orange;
+        border-radius: 5px;
+        margin: 10px;
+        position: relative;
+        border: 3px solid black;
+        /* animation-name: rightMovement;
+        position: relative;
+        animation-duration: 5s;
+        animation-iteration-count: 1;
+        animation-delay: 2s; */
+        /* animation-timing-function: linear; */
+        /* animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1); */
+        /* animation-direction: alternate ;
+        animation-fill-mode: both; */
+        /* <<--shorthand notation---> */
+        animation: 5s linear 1s infinite alternate none  running rightMovement;
+      }
+      @keyframes rightMovement {
+        from {
+          top: 0;
+          left: 0;
+        }
+        to {
+          top: 0;
+          left: 1050px;
+        }
+      }
+      #box2{
+        width: 350px;
+        height: 320px;
+        background-color: rgb(171, 14, 121);
+        border-radius: 5px;
+        margin: 10px;
+        position: relative;
+        border: 3px solid black;
+        animation: 5s ease-in  1s infinite alternate none  running leftMovement;
+      }
+      @keyframes leftMovement {
+        from {
+          top: 50px;
+          left: 100px;
+        }
+        to {
+          top:50px;
+          left:0px;
+        }
+      }
+      #circle{
+        width: 100px;
+        height: 100px;
+        background-color: rgb(185, 222, 18);
+        border-radius: 500px;
+        margin: 10px;
+        position: relative;
+        border: 3px solid black;
+        top: 200px;
+        left: 670px;
+      }
+      @keyframes leftMovement {
+        from {
+          top: 50px;
+          left: 100px;
+        }
+        to {
+          top:50px;
+          left:0px;
+        }
+    }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box"><img src="sinchan4.png" />bebooo😜 </div>
+         <div id="circle"></div>
+     <div id="box2"> <img src="sinchan1.jpeg" > img2</div>
+     
+      </div>
+  </body>
+</html>

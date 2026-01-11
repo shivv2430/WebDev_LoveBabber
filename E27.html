@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>card project</title>
+    <style>
+        .container{
+            background-color: lightblue;
+            /* border: 2px solid black;
+            border-radius:5px; */
+            display: flex;
+            /* flex-direction: column; */
+            height: 700vh;
+            width: 1420vw;
+            /* margin: 20px;
+            padding: 10px; */
+            align-items: center;
+            justify-content: center;
+        }
+        .box{
+            background-color: rgb(240, 240, 243);
+            border: 4px solid black;
+            border-radius:8px;
+            display: flex;
+            flex-direction: column;
+            height: 500px;
+            width: 350px;
+            margin: 20px;
+            padding: 10px;
+            align-items: center;
+            justify-content: center;
+        }
+        h2{
+
+        }
+        p{
+
+        }
+        #scan{
+            height:300px ;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <img id="scan" src="data:image/png;base64,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">
+             <h2>Improve your font end Skills by buiding project</h2>
+            <p>scan the QR Code to visit Front End mentor and take your coding skills to next level</p>
+        </div>
+    </div>
+</body>
+</html>

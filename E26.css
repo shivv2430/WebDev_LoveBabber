@@ -1,0 +1,112 @@
+    
+    *{
+        margin: 0;
+        padding: 10;
+        box-sizing: border-box; 
+    }
+    #navlist{
+        list-style: none;
+        margin-left: 15px;
+        margin-right: 15px;
+        font-size: 2.5 rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+       .nav{
+        display: flex;
+        justify-content: space-between;
+        display: block;
+        unicode-bidi: isolate;
+         }
+      .container{
+         width:100%;
+         justify-content: center;
+         align-items: center;
+      }
+      #recipeA{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+      }
+      
+
+      .contentbox {
+        border: 2px solid black;
+        border-radius: 5px;
+        background-color: rgb(45, 143, 185);
+        height: auto;
+        width: 500px;
+        margin: 10px;
+        padding: 5px;
+        overflow-x: none;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        gap: 1px;
+        padding: 3rem;
+        box-shadow: 0px 0px 30px black;
+      }
+      .navContainer{
+        width: 100vw;
+        background-color: rgb(148, 71, 71);
+        min-height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        justify-content: space-around;
+
+
+      }
+      /* #navlogo{
+         
+        font-size: 2.8 rem;  */
+        /* font-family: fantasy; */
+        /* font-style: italic;
+        font-weight: 100;
+        width: 100%;
+        margin: 10px;
+        padding: 5px; */ 
+      /* } */
+      #footer{
+        background-color: beige;
+        background-image: linear-gradient(160deg, #8e8da8, #0809C8);
+        width: 100%;
+        text-align: center;
+        min-height: 40px;
+      }
+      /* .footerbox{
+        color: azure;
+        font-size:2rem;
+      } */
+      /* .items{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      } */
+      #box1{
+        height: 20px;
+        width: 20px;
+        border-radius: 20px;
+      }
+      #box2{
+        height: 400px;
+        border-radius: 20px;
+      }
+      /* .leftbox{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .leftbox h2{
+        font-size: 2rem;
+      }
+      .imgbox{
+        font-size: 1.3rem;
+      }
+      .recipebox{
+        font-size: 1.1rem;
+      } */

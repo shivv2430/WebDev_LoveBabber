@@ -1,0 +1,140 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    height: 100%;
+    width: 100%;
+     
+}
+a{
+    text-decoration: none ;
+
+}
+ .container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+.header-container{
+    margin-bottom: 2.5rem;;
+}
+.header-title{
+    margin-bottom: 1rem;
+    font-size: 1.7rem;
+    line-height: 2rem;
+    font-weight: 700;
+    text-align: center;
+}
+.header-description{
+    margin: 0 auto;
+    color: rgb(115, 120, 118);
+   
+   max-width: 600px;
+   text-align: center;
+}
+.main-container{
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+.card-container{
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.card-image-container{
+    position: relative ;
+    overflow: hidden;
+    height: 18rem;
+}
+.card-image{
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+}
+.card-title-container{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    /* margin: 1rem; */
+
+}
+.card-image{
+    transition: transform 0.3s ease;
+}
+
+.card-container:hover .card-image{
+    transform: scale(1.1);
+}
+
+.card-title{
+    font-size: 1rem;
+    font-weight: 800;
+    line-height: 1.5rem;
+    margin-bottom: 0.01px;
+    color: rgb(92, 86, 86);
+}
+
+.card-title-anchor .card-title{
+     color: blue;
+}
+.card-desc{
+    font-size: 0.85rem;
+    color: #555;
+}
+
+.card-footer-container{
+    display:flex ;
+    justify-content: space-between;
+    padding: 1.5rem;
+}
+.author-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+.author-avatar-container{
+     height: 2.5rem;
+     width: 2.5rem;
+     overflow: hidden;
+     border-radius: 2px;
+}
+.author-avatar{
+    height: 2.5rem;
+     width: 2.5rem;
+     overflow: hidden;
+     border-radius: 20px;
+     background-color: #373535;
+}
+.author-info-container{
+    display: flex;
+    flex-direction:column;
+}
+.author_name{
+    color: rgb(70, 70, 187);
+}
+.author_date{
+    color: #373535;
+}
+.card-tag-container{
+    font-size: 0.75rem;
+    border:  1px solid rgb(61, 61, 61);
+    border-radius: 4px;
+    color: rgb(33, 70, 192);
+    height: 25px;
+    width: 80px;
+    text-align: center;
+    padding: 0.25 0.5rem;
+}
+.card-tag-container:hover{
+    color: blueviolet;
+    box-shadow: #373535;
+
+}
