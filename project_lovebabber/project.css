@@ -398,3 +398,149 @@ text-align: center;
         grid-template-columns: repeat(1, 1fr);
     }
 }
+                                              /* Testimonial-Section */
+.testimonial-container{
+    gap: 2rem;
+    padding: 4rem 2rem;
+}
+.testimonial-content{
+    max-width: 1200px;
+    text-align: center;
+    margin: auto;
+}
+.testimonial-main-title{
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #333;
+}
+.testimonial-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+.testimonial-card{
+    background-color: #fff;
+    padding: 2.5rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.testimonial-para{
+    font-style: italic;
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1rem;
+    margin-bottom: 2rem;
+}
+.testimonial-image{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 1.2rem;
+}
+.author-name{
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.3rem;
+
+}
+.author-desc{
+    font-size: 0.9rem;
+    color: #777;
+}
+                                          /* newsletter-Section */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.main-box{
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+.newsletter-box{
+    display: flex;
+    gap: 3rem;
+    background-color: #e6e6e6;
+    border-radius: 0.2rem;
+    padding: 2rem;
+    align-items: center;
+}
+
+/* IMAGE */
+.newsletter-image{
+    flex: 1;
+}
+
+.newsletter-image img{
+    width: 100%;
+    height: 100%;
+    /* border-radius: 12px; */
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+/* CONTENT */
+.newsletter-content{
+    flex: 1;
+}
+
+.newsletter-content h2{
+    font-size: 2.5rem;
+    color: #4b6cfb;
+    margin-bottom: 0.8rem;
+    
+}
+
+.newsletter-content p{
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+/* INPUT + BUTTON */
+.newsletter-form{
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.newsletter-form input{
+    flex: 1;
+    padding: 0.8rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.newsletter-form button{
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    background-color: #4b6cfb;
+    color: white;
+    cursor: pointer;
+}
+.newsletter-form button:hover{
+    background-color: #374abe;
+    block-size: 2.6rem;
+}
+
+.terms{
+    font-size: 0.95rem;
+    color: #777;
+    justify-items: center;
+}
+
+.terms a{
+    color: #4b6cfb;
+    text-decoration: none;
+    text-decoration: underline;
+}
+.terms a:hover{
+    color: #374abe;
+}
+
