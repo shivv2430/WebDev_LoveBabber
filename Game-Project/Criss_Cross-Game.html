@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Criss Cross Game</title>
+
+<style>
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    background:#f4f4f4;
+    font-family:Arial;
+}
+
+.container{
+    text-align:center;
+}
+
+.board{
+    display:grid;
+    grid-template-columns:repeat(3,100px);
+    gap:6px;
+    margin:20px 0;
+}
+
+.cell{
+    width:100px;
+    height:100px;
+    border:2px solid #333;
+    font-size:50px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+    background:white;
+}
+
+.cell:hover{
+    background:#eaeaea;
+}
+
+#status{
+    font-size:20px;
+    margin-top:10px;
+}
+
+button{
+    margin-top:15px;
+    padding:8px 18px;
+    font-size:16px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Criss Cross Game</h1>
+
+    <div class="board">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+    </div>
+
+    <div id="status">Player X Turn</div>
+
+    <button onclick="restart()">Restart</button>
+</div>
+
+<script>
+let cells = document.querySelectorAll(".cell");
+let currentPlayer = "X";
+let gameActive = true;
+
+const winPatterns = [
+    [0,1,2],
+    [3,4,5],
+    [6,7,8],
+    [0,3,6],
+    [1,4,7],
+    [2,5,8],
+    [0,4,8],
+    [2,4,6]
+];
+
+cells.forEach((cell,index)=>{
+    cell.addEventListener("click",()=>{
+        if(cell.textContent==="" && gameActive){
+            cell.textContent = currentPlayer;
+            checkWinner();
+            currentPlayer = currentPlayer==="X" ? "O" : "X";
+            if(gameActive)
+                document.getElementById("status").innerText = "Player " + currentPlayer + " Turn";
+        }
+    });
+});
+
+function checkWinner(){
+    for(let pattern of winPatterns){
+        let [a,b,c] = pattern;
+
+        if(
+            cells[a].textContent &&
+            cells[a].textContent === cells[b].textContent &&
+            cells[a].textContent === cells[c].textContent
+        ){
+            document.getElementById("status").innerText = 
+                "Player " + cells[a].textContent + " Wins!";
+            gameActive = false;
+            return;
+        }
+    }
+
+    let draw = true;
+    cells.forEach(cell=>{
+        if(cell.textContent==="") draw=false;
+    });
+
+    if(draw){
+        document.getElementById("status").innerText = "It's a Draw!";
+        gameActive=false;
+    }
+}
+
+function restart(){
+    cells.forEach(cell=>cell.textContent="");
+    currentPlayer="X";
+    gameActive=true;
+    document.getElementById("status").innerText="Player X Turn";
+}
+</script>
+
+</body>
+</html>
