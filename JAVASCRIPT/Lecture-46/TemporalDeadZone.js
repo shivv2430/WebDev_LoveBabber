@@ -6,21 +6,6 @@ console.log("Love");
 let Marks= 100;
 console.log(Marks);
 
- let marks= 100;
-console.log(marks);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//  let marks= 100;
+// console.log(marks);
 

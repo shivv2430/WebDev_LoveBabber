@@ -1,5 +1,5 @@
                                                         // Global Scope
-// ( also for var,const,let instead for vsr in first line)
+// ( also for var,const,let instead for var in first line)
 
 // var age =15;
 

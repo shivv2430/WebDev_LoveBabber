@@ -20,8 +20,8 @@
 //     }
 // }
 // let ans= Solve(5);
-// let finalans=ans(10);
-// console.log(finalans);
+// let finalAns=ans(10);
+// console.log(finalAns);
 
 // const arr=[
 //     function(a,b){
