@@ -7,23 +7,23 @@
 // pal`;
 // console.log(Name);
 
-// let firstName = new String("Love Babbar");
+// let firstName = new String("Love Babber");
 // console.log(firstName);
 
 //                                        //  Operations//
 //               // Concatenation//
-// let firstname = "Shivani";
+// let firstName = "Shivani";
 // let Myname = "SHIVANI";
-// let lastname = "Pal";
-// // let Name = firstname+ " "+lastname;
-// let Name=`$(firstname)$(lastname)`;
+// let lastName = "Pal";
+// // let Name = firstName+ " "+lastName;
+// let Name=`$(firstName)$(lastName)`;
 // console.log(Name);
 
 //                 // length //
-// console.log(firstname.length);
+// console.log(firstName.length);
 
                 // uppercase //
-// console.log(firstname.toUpperCase());
+// console.log(firstName.toUpperCase());
 
                 //lowercase//
 // console.log(Myname.toLowerCase());
@@ -33,13 +33,13 @@
 // console.log(str.substring[2,4]);
 
                 // split method
-let sentence = "hello ji kaise ho sare";
-// let sent = "hello ji \"kaise\" ho sare";
-// let tence = "hello \\ji \\kaise\\ho\\ sare";
+let sentence = "hello ji kha ho sab";
+// let sent = "hello ji \"kha\" ho sab";
+// let print = "hello \\ji \\kha\\ho\\ sab";
 
 let words = sentence.split(" ");
 // let word = sent.split(" ");
-// let ward = tense.split(" \\");
+// let ward = print.split(" \\");
 
 
 console.log(words);
