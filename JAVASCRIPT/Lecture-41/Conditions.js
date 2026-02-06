@@ -1,6 +1,6 @@
-                    // Conditional
+                                     // Conditional
 
-//   if-else
+                 //   if-else
 // let age=25;
 // if (age>18){
 //     console.log("can vote");
@@ -9,7 +9,7 @@
 //     console.log("can't vote");
 // }
 
-// //else-if condition
+                //  else-if condition
 // if (number==1){
 //     console.log("A");
 // }
@@ -26,7 +26,8 @@
 //     console.log("E");
 // }
 
-//SWITCH-CASE
+
+                              //SWITCH-CASE
 let num = 3;
 switch(num){
 case 1: console.log("A");

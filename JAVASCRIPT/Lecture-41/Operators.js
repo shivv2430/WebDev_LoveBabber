@@ -5,7 +5,7 @@ console.log(a++);                //post Increment
 console.log(++a);                //pre Increment
 
 console.log(--a);                  //pre Decrement
-console.log(a--);                   //post Degreement
+console.log(a--);                   //post Decrement
                             // Binary Operators
 // arithmetic operators
 
@@ -39,7 +39,7 @@ let ans=!(true);
 console.log(ans);
 
                                 // Ternay Operators
-                                // (condition? statement1:statement2)
+                                // (condition ? statement1:statement2)
  
  let age=25;
 let status1 =(age>18? "i can vote":" i can't vote");
