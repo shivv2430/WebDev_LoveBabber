@@ -1,0 +1,84 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+header {
+    background-color: #0066cc;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+/* Hero Section */
+.hero {
+    background-color: #e6f2ff;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.hero button {
+    padding: 10px 20px;
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* Destinations */
+#destinations {
+    padding: 40px;
+    text-align: center;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    background-color: #f2f2f2;
+    padding: 20px;
+    width: 200px;
+    border-radius: 8px;
+}
+
+/* Services */
+#services {
+    background-color: #f9f9f9;
+    padding: 40px;
+    text-align: center;
+}
+
+#services ul {
+    list-style: none;
+    padding: 0;
+}
+
+#services li {
+    margin: 10px 0;
+}
+
+/* Contact */
+#contact {
+    padding: 40px;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    background-color: #0066cc;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
