@@ -1,5 +1,6 @@
 // Window Object: Global object(created by Browser ,everything lies in it ,we can control it's window's like open & close)
 
+//CRUD (create, Read, update and delete)
 const { createElement } = require("react");
 
 // DOM (Document_Object_Model)(tree-like-structure):-HTML's code convert into JS object and that js (object)code is called document
