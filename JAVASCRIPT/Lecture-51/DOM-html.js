@@ -39,4 +39,8 @@ container.appendChild(newParagraph);
 
 const element = document.getElementById("div");
 
+                                            //Remove Elements
+ let parent = document.querySelector('#box1');
+ let child = document.querySelector('#box2');
+ parent.removeChild(child);                                           
 
