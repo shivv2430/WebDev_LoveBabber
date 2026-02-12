@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Responsive E-commerce Navbar</title>
+  <body>
+
+  <nav class="nav-wrap" aria-label="Main Navigation">
+    <div class="nav">
+      <!-- BRAND -->
+      <div class="brand">
+        <div class="logo">E</div>
+        <div class="name">E-Shop</div>
+      </div>
+
+      <!-- CENTER LINKS -->
+      <div class="nav-links" role="navigation" aria-label="Primary">
+        <a href="#" tabindex="0">Home</a>
+        <a href="#" tabindex="0">Shop</a>
+        <a href="#" tabindex="0">Categories</a>
+        <a href="#" tabindex="0">Deals</a>
+        <a href="#" tabindex="0">Contact</a>
+      </div>
+
+      <!-- RIGHT: search, icons, hamburger -->
+      <div class="nav-right">
+        <div class="search" role="search" aria-label="Site search">
+          <svg width="16" 
+          height="16" 
+          viewBox="0 0 24 24"
+           fill="none" 
+           aria-hidden="true"><path 
+           d="M21 21l-4.35-4.35" 
+           stroke="currentColor" 
+           stroke-width="2" 
+           stroke-linecap="round" 
+           stroke-linejoin="round"/></svg>
+          <input type="search" placeholder="Search products..." aria-label="Search products">
+        </div>
+
+        <button class="icon-btn" aria-label="Wishlist">♡</button>
+
+        <div class="cart" aria-hidden="false">
+          <button class="icon-btn" aria-label="Cart">🛒</button>
+          <div class="badge" aria-hidden="true">3</div>
+        </div>
+
+        <!-- Hamburger button (mobile) -->
+        <button class="hamburger" id="hambtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+          ☰
+        </button>
+      </div>
+    </div>
+
+    <!-- MOBILE MENU (toggled) -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <a href="#">Home</a>
+      <a href="#">Shop</a>
+      <a href="#">Categories</a>
+      <a href="#">Deals</a>
+      <a href="#">Contact</a>
+      <hr style="border:none;border-top:1px solid rgba(255,255,255,0.04);margin:8px 0">
+      <a href="#" style="font-weight:700">Sign in</a>
+    </div>
+  </nav>
+
+  <!-- Page content placeholder -->
+  <main style="padding:28px;max-width:var(--container-max);margin:0 auto">
+    <h1 style="margin:0 0 12px">Welcome to E-Shop</h1>
+    <p style="color:var(--muted)">This is a demo responsive navbar using Flexbox and media queries. Resize the browser to see the mobile menu.</p>
+  </main>
+
+  <script>
+    // Simple toggle for mobile menu
+    const hambtn = document.getElementById('hambtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    hambtn.addEventListener('click', () => {
+      const expanded = hambtn.getAttribute('aria-expanded') === 'true';
+      hambtn.setAttribute('aria-expanded', String(!expanded));
+      mobileMenu.style.display = expanded ? 'none' : 'block';
+      mobileMenu.setAttribute('aria-hidden', String(expanded));
+      // change icon (optional)
+      hambtn.textContent = expanded ? '☰' : '✕';
+    });
+
+    // Close menu when clicking outside (mobile)
+    document.addEventListener('click', (e) => {
+      if (window.innerWidth <= 599) {
+        if (!mobileMenu.contains(e.target) && !hambtn.contains(e.target) && mobileMenu.style.display === 'block') {
+          mobileMenu.style.display = 'none';
+          mobileMenu.setAttribute('aria-hidden','true');
+          hambtn.setAttribute('aria-expanded','false');
+          hambtn.textContent = '☰';
+        }
+      }
+    });
+
+    // Keep mobile menu hidden when resizing to desktop
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 599) {
+        mobileMenu.style.display = 'none';
+        mobileMenu.setAttribute('aria-hidden','true');
+        hambtn.setAttribute('aria-expanded','false');
+        hambtn.textContent = '☰';
+      }
+    });
+  </script>
+
+</body>
+  <style>
+    /* ---------- Variables / Base ---------- */
+    :root{
+      --bg: #ffffff;
+      --nav-bg: #0f172a;
+      --accent: #1f67ff;
+      --muted: #94a3b8;
+      --text: #f8fafc;
+      --gap: 12px;
+      --height: 64px;
+      --container-max: 1200px;
+      --radius: 8px;
+      --shadow: 0 6px 18px rgba(2,6,23,0.12);
+      --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%;font-family:var(--font);background:#f3f4f6;color:#0f172a}
+
+    /* ---------- Navbar ---------- */
+    .nav-wrap{
+      background:var(--nav-bg);
+      color:var(--text);
+      box-shadow:var(--shadow);
+      position:sticky;
+      top:0;
+      z-index:50;
+    }
+
+    .nav{
+      max-width:var(--container-max);
+      margin:0 auto;
+      height:var(--height);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:0 16px;
+      gap:var(--gap);
+    }
+
+    /* Brand / logo */
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:700;
+      letter-spacing:0.2px;
+    }
+    .brand .logo{
+      width:38px;
+      height:38px;
+      background:var(--accent);
+      border-radius:8px;
+      display:inline-grid;
+      place-items:center;
+      color:white;
+      font-weight:800;
+      box-shadow:0 4px 10px rgba(31,103,255,0.12);
+    }
+    .brand .name{font-size:1rem}
+
+    /* center nav links (flex) */
+    .nav-links{
+      display:flex;
+      gap:18px;
+      align-items:center;
+      justify-content:center;
+      flex:1;
+      margin-left:24px;
+    }
+    .nav-links a{
+      color:var(--text);
+      text-decoration:none;
+      padding:8px 10px;
+      border-radius:6px;
+      font-weight:600;
+      font-size:0.95rem;
+    }
+    .nav-links a:hover, .nav-links a:focus{
+      background:rgba(255,255,255,0.06);
+      outline:none;
+    }
+
+    /* right area: search + icons */
+    .nav-right{
+      display:flex;
+      gap:12px;
+      align-items:center;
+    }
+
+    .search {
+      display:flex;
+      align-items:center;
+      gap:6px;
+      background:rgba(255,255,255,0.06);
+      padding:6px 8px;
+      border-radius:8px;
+    }
+    .search input{
+      border:none;
+      background:transparent;
+      color:var(--text);
+      width:160px;
+      outline:none;
+      font-size:0.95rem;
+    }
+    .icon-btn{
+      background:transparent;
+      border:1px solid rgba(255,255,255,0.06);
+      padding:8px;
+      border-radius:8px;
+      color:var(--text);
+      cursor:pointer;
+      font-weight:700;
+    }
+
+    /* cart badge */
+    .cart{
+      position:relative;
+    }
+    .cart .badge{
+      position:absolute;
+      top:-6px;
+      right:-6px;
+      background:#ef4444;
+      color:white;
+      width:20px;
+      height:20px;
+      display:inline-grid;
+      place-items:center;
+      border-radius:999px;
+      font-size:0.75rem;
+      font-weight:700;
+      border:2px solid var(--nav-bg);
+    }
+
+    /* Hamburger (mobile) */
+    .hamburger{
+      display:none;
+      background:transparent;
+      border:none;
+      color:var(--text);
+      padding:8px;
+      border-radius:8px;
+      cursor:pointer;
+      font-size:1.15rem;
+    }
+
+    /* ---------- Mobile menu (hidden by default) ---------- */
+    .mobile-menu{
+      display:none;
+      background:linear-gradient(180deg, rgba(15,23,42,0.98), rgba(15,23,42,0.95));
+      padding:12px;
+      border-top:1px solid rgba(255,255,255,0.04);
+    }
+    .mobile-menu a{
+      display:block;
+      padding:10px 12px;
+      color:var(--text);
+      text-decoration:none;
+      border-radius:6px;
+      margin-bottom:6px;
+      font-weight:600;
+    }
+    .mobile-menu a:hover{ background:rgba(255,255,255,0.04); }
+
+    /* ---------- Responsive breakpoints ---------- */
+    /* Desktop / large: show everything inline */
+    @media (min-width: 900px){
+      .hamburger{ display:none }
+      .mobile-menu{ display:none !important }
+      .nav-links{ display:flex }
+      .search input{ width:200px }
+    }
+
+    /* Tablet: moderate changes */
+    @media (min-width:600px) and (max-width:899px){
+      .nav-links{ gap:12px; }
+      .search input{ width:140px }
+    }
+
+    /* Mobile: collapse links into hamburger menu */
+    @media (max-width:599px){
+      .nav{
+        padding:0 12px;
+      }
+      .nav-links{ display:none }          /* hide center links */
+      .search{ display:none }             /* hide search */
+      .hamburger{ display:inline-block }  /* show hamburger */
+      .icon-btn{ padding:8px }            /* keep icons visible */
+      .brand .name{ display:none }        /* optional: hide brand text to save space */
+      .nav-right{ gap:8px }
+    }
+
+    /* small focus style */
+    a:focus, button:focus { outline:none; box-shadow:0 0 0 4px rgba(31,103,255,0.08); border-radius:6px; }
+
+  </style>
+</head>
+</html>
