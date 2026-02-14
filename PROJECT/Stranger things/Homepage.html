@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stranger Things | Home</title>
+
+  <style>
+    /* ===== GLOBAL STYLES ===== */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(180deg, #020824, #000);
+      color: darkred;
+    }
+
+    /* ===== NAVBAR ===== */
+    .navbar {
+      display: flex;
+      justify-content: center;
+      gap: 35px;
+      padding: 20px;
+      border-bottom: 2px solid darkred;
+    }
+
+    .navbar a {
+      color: darkred;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .navbar a:hover {
+      color: red;
+      text-shadow: 0 0 8px red;
+      text-decoration: underline wavy;
+    }
+
+    /* ===== HERO SECTION ===== */
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      color: red;
+      /* text-decoration: underline wavy; */
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      max-width: 800px;
+      margin: auto;
+      line-height: 1.8;
+    }
+
+    /* ===== BUTTONS ===== */
+    .btn-group {
+      margin-top: 40px;
+    }
+
+    .btn {
+      border: 2px solid darkred;
+      padding: 12px 25px;
+      margin: 10px;
+      color: darkred;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 30px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background-color: darkred;
+      color: black;
+      box-shadow: 0 0 15px red;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      text-align: center;
+      padding: 20px;
+      border-top: 2px solid darkred;
+      margin-top: 60px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="Homepage.html">Home</a>
+    <a href="About.html">About</a>
+    <a href="Characters.html">Characters</a>
+    <a href="season.html">Seasons</a>
+    <a href="gallery.html">Gallery</a>
+  </nav>
+
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Welcome to Stranger Things</h1>
+    <p>
+      Enter the mysterious world of Hawkins, where friendship, courage,
+      and supernatural forces collide. Explore characters, seasons,
+      and unforgettable moments from the series.
+    </p>
+
+    <div class="btn-group">
+      <a href="About.html" class="btn">Explore Story</a>
+      <a href="Characters.html" class="btn">Meet Characters</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 Stranger Things Fan Website | For Educational Use</p>
+  </footer>
+
+</body>
+</html>

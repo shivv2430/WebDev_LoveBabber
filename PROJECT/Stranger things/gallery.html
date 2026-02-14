@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Stranger Things</title>
+</head>
+<body>
+
+    <style>
+       .navbar {
+      display: flex;
+      justify-content: center;
+      gap: 35px;
+      padding: 20px;
+      border-bottom: 2px solid darkred;
+    }
+
+    .navbar a {
+      color: darkred;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .navbar a:hover {
+      color: red;
+      text-shadow: 0 0 8px red;
+      text-decoration: underline wavy;
+    }
+
+
+
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black;
+            margin: 0;
+            padding: 20px;
+        }
+
+        section {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        h2 {
+            color: #b30000;
+            font-style: oblique;
+            font-size: 2.5rem;
+            text-align: center;
+            text-decoration: underline wavy darkred;
+            margin-bottom: 30px;
+        }
+
+        .images {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .images img {
+            max-width: 300px;
+            height: auto;
+            border-radius: 10px;
+            border: 2px solid #b30000;
+        }
+
+        .footer {
+  background-color: #000;
+  border-top: 2px solid darkred;
+  padding: 20px 10px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.footer p {
+  color: darkred;
+  font-size: 14px;
+  margin: 8px 0;
+}
+
+.footer span {
+  color: red;
+  font-weight: bold;
+}
+
+    </style>
+
+    <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="Homepage.html">Home</a>
+    <a href="About.html">About</a>
+    <a href="Characters.html">Characters</a>
+    <a href="season.html">Seasons</a>
+    <a href="gallery.html">Gallery</a>
+  </nav>
+
+    <!-- Gallery Section -->
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <div class="images">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRL9wI_lOofYIxC7LFt52ismKfSIgbA1tiYMA&s" alt="Stranger Things Image">
+      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxISEhUSExMVFRUVFRUVFRUVFRUWFRcVFRUWFxUVFhUYHSggGBolGxUVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGxAQGi0lHyUtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIAKgBKwMBIgACEQEDEQH/xAAbAAACAwEBAQAAAAAAAAAAAAACAwABBAUGB//EADcQAAEDAgQEAwcDBAIDAAAAAAEAAhEDIQQxQVESYXGBkaHwBRMiMrHB0ULh8QYUI1JyghczYv/EABkBAAMBAQEAAAAAAAAAAAAAAAABAgMEBf/EACQRAAICAgMAAQUBAQAAAAAAAAABAhEDIRIxQVEEEyJhccEU/9oADAMBAAIRAxEAPwD5MMXyVjEnZG2kE2lSEhY6OtKQuq6DHJD7yNFpw1A1aha0SSQAAvS+3P6HxWEpNqVWANdaxBg5wYyStIH2eQOI5KhiyE+rSAWUMTpBv5GHGHZQ4s7KGFQIRSDfyWK5KNtYobJlJqGAbXuKGqCc10MJSDjC95/42qnCf3Iez5OPgvPDE55TCi6Y3+2fLC1KkrpYqjBhY3BWmTRmJKZRYXEBGWrThWRdDdIajsaWgJVZylR90mq5KKKkyBwTGvbsswVyrcTPkaw5uyBzxslByFzkuCDmxj3hKtKElUCnQnKzVTI2V1aYISWOT2uWbVGq2jnklRs5ASttShJnTVZ8U+DwN/7OVKVkONGd9SDGZmI/dXxOFyYGwzKVxgWAvuheHHNWQWa05CPW+agcf2UZlayqSgSGtrdvWy0MqnU81hTaV7ai4+/rkk0UmaxnBUcLwpTuB38Mx4X9BMqtv1UGgtRWArhMkcw2TmGxOy54qFanuIpjdxQyoyNHsrFOpObUbm1wcOoMr2n9Yf11UxlFlPh4QCCbzJiF89pkp9WqbdEmtkaKfWnPNJa1U66jJVDseWBJqsuikqiShDbTI12idTeBmsrqoHVGahE8Ri1u3PskxWdOjiACLhfQfZP9d1HUG4Rwbw8PBxgmS3aOi+RDEi5i/q6FlV2hI6GEnCxOdnoPbFRvvX8OU2XNcszMQ4n4r89e6cCqSoaY6kySnVHQpSbASarrqO2aPSAJQFSVAVZkxcKIyoFRJTSULimISgBd1bVapABApjHJKJhUtFJnTxdQNDWC0TJ6rjYhxvoLknmTlPRb8QSRMTOU+S576ZA4STnP5UQNZ/oUxkdcx3ROP8oa02GwuhFOTHh4LQyutIm+ysKogeuSdSp24nWH40TYkrBZRJmOZ52F+yY6iW5i4iRsCAQY7+YV0MaWO4gLwQOUiJSKZJJdPxC99Yv66Kdj14dWlR+OJnhA8SCR9AO5TKbPeUPetH/rIa/lxE8J+y5uHxXAST8weHNGQkF09r/RaG1zS4mgDheZibRFxbMXMdFNMpSsuFcKmEESMpI8I/IRwgYDBeE7EOExsEOHcOLK0JNZ8uJT9DpB08kQKW05ImlMQbxZXRCW82TaWSTB9jXNssVZ90eKqmLHkslarIEWt5yhIUpFPxF4GQNt4Q4qsXEyUqsAPC/XVCVaSMWyBGx8JaNjJTYK/DbTLSeUQfHyK1UGgmQDA1WOjTuBoupT9oMAgCdIWTOpR+QKj1nqFFxcWR8TH1Q1GkSDmlFBKxauFAFRctUjAhKsiyGFAExFSrhWAoUDFolcKQgASFAiN0BSGaKtbgaCdreGayniI4tDlbPT7J+IAhozt1Jm9uiTRHBzvIzsNyoRrbsADfafuqqUiII6WhXXdn1ufss7qmosqSIk16OY0Nz7BKq1iSgAkqgnRDlqkECJv36ow6D2PmEFO181M9eqBroE5rs44M92A0OB92x0OjPMnpAMWXNwzW8QL/ln4unLmr/ui54LpIsIN/hFovynxUyVv+BH8Vv0PB1YMGIMAk6XzW8LlPmY2TaddwEAoaLi/DVhnwZ5KCmqoKOqoF4XUACW1xlA4qNbKdCs00aLnuDGiSTYDMp2Kw76J4XgtdsQk+z8a+hUbUYYc0yCbjwWn2z7UdXd7x4HFkSNdSSTmbpUqFbs5j6t/qs7qmnNW9ySVSRm2WqKsBQ0zsqFTKWii4JTaROiY2ipbRrjjK7o2UXwZzWnD0munISsjVYWJ3cUlsbjqAaBpJuqbW/S4/DwzfS1vt4rS0tNOHCZPgkim1zSLbgnlomjOS3oVMevNSEFJ8/DqMreXrdacPh3OMAbnwWl0tmEcblLjHYtoldJlOkWibGL9UNfDBjQQbrIXKL59Hb9v/ndSSbYyqGE2suv7PpYYAcYmy4Uom1ESxuSqxY88McrcUz0GLwOGLXOaYIyC8zVbdahVSKjUY4OGm7I+pyxy04xS/glU5WVGlaHHQYd8M5RaR9/WizuqkGcyRN8mjvqtLWcQjYz1mAFjqNuTvbsoXZq7pMS4k3JQxCe6np9ckt1xAFtyrsyaKYfoq4CjbGQv+UszmgTWgg1WSgVZpiugnPlEGqiIz9SjOfVIcR+PbDybXhwj/V1x+CNCEVSiSZZHCcpInnnzlJBuW/pLpB1H7EadE+ll8hPOSFD0aRtgifBCrD0z4SqJSsU5HTNkt6sFMXo12YV4pnw90pz7hamu4gZ0UvRSp2jkvsqT8TTgxNkiFaZk1TDoOhwJ9aLSZasZCbRxBFjcabjupkvTfDkUfxevhj6dQbd9OiY14KtthZUymJlZOjvip6WmXCpMcEtKLDLCjTQMiO6VQbUJsR00jUIWGFrZXGydnO4mKtDXcQuLEdM+66BxvA+f0uvbIA6+C5eNLZEZbaWR8fE3MWHltCqSsjHNwlrtHQrVJKWgwT+JhEXYfEEk+SshXHoMmRzlbKcqCsq1pRzkKc144SEmVFE42a4p0xLmqgF2PZeCbUJ4jYBY8dQ4HkLNZE5cTaf00o4/ueGRxQuoNBjiJMSdhqQrKOkB65qmc8VboRXiNyVmqA6nt+y01TBnLb8rO54/cIQ50SmI8Elx0RcaprbHxVmTdqkVCMaHuhaJ+iJ7SAPHsUCGMZxCeje4Fj9FeHPxNnloqa6GC4ucto3TaHwuadsxvZSyoiTm4bEpjK5AgR4Ica8e8cQIBvvmL+azmp0Tqw58TVBRUxfsmgIGpBVCnFVKtyoJklgprJKTqjBRQJl4sg9fXgsa1A3lLr0puNfqha0Et7EkoqTZIQELThiES0h4kpT2aybJVN11HFJc5ZKJ6OXNTTNpMoEj3qnvElBjn9TGQ4vSKlVUJcQBqhdaQfV1oo0cs8rl0RwGtwD5arVi2UgQW5QMumd1mZTlpdIgECNb6+MePJWwCQP9f5QzNPXRpw1XhMnI5gG9mmR3EppKx+9iCM5kHmPRWypU4jMRMHxCcFsWR6B4lJVK1sYWSUQKEBFolLouHZqwtQg55p3tqkxpYWu4i4SeSwtKS/Ncqh+dnp5MqWHhV/4U8qUnwqIQBatWcF0xFarcoG0SeS3aIuACxsbHQAA5ST4oToTV9mP3MQSQb5XuqNOCL2nvf0U+uRu10B3ykkAwNdShxAzOxy856pWUoqjPVbwuI5o6nyic/yrxWYPL6GEoCQTtCoh6bQy3A0H/Z3hAt1/KAvzj1dA6pIAgWmN7mb7qi7ROjOzRjR/kdzg93AE+ZTqONLQBa27QfOFmcSW3015dUriSS1Q26ZrY4q2FLBRTZA7BcqUlRMREQKBWgCwVYNiPUoU3DUeMnQDM/bqkxmUsMKNMLsMp0i3hNnaHT+VzK9LhMJKd6Fx9QPvFeaWUbE6K5N9lEKAJpapSA18N0WHHZdJsI8SJAOxy37qpVVMhOUid0MpPVCqFQjK3FIPSLi/KVdF93eSMkgEaC4HU/ylUnC20pdgtNbDa24B3lbi1YuFzuJwGXDPIHLz+q203EtBOckHtl5FOLpg9pkhWoXKNctjANjEZpq2BOaFnJnVihezPkErFOBIjZaXsWOsyCsvTeUnxoByrgNjGdhzhEUVZ5vSb+kROvEXCfC4VNnNVlvqD5fmdEDYRmed5Wf2k4F8GbADqczPdNfigxp4ZkmAemRneAPNc9p4nCTEkDLKczCUV6KbrRsrtAED9QECPWh8kJeSxzuczz1UxGYa28XB7x+Fdd8BrAbQZ2uboRTbEPdLBpE95V0IgjO1+uiFrTwwRYGx+3kkzoqoxbp2EWIOFMk56ICZTRLocDISEeWcwbo2sBH7oDsZKk2UAsoxhjJIoEKKEKkwIESGEQaUANw1EvMeJ2C6LmwIFgNEWHo+7bH6jd34Q1FhKVs040jNUZKz1BFjbrl4rWUJcqTJowPaqC2uot0t0y8Fnq0eh8lakhbBa5Hh2ySkBq0Yd0FMLbLNNUul/bDdCcIEuRfBjv6j9mspOBpPFSmWMEg3B4RYj1muQDLCwg8TDle7SfsT5rbiKfCx19FiqMLXTMn6ghTEpp9l4erwk2mWwW5BwkS0+swEzD1JtuPOCbrG76a/ZU2q6eKb7jkqojkkzoFQIaVUP0AjO+m8LUMON1X3EhKF7RVIrbSCyilCa1xCiUrOjHJxVGnEYU+7L7QDHis2Lo0/ch/H/k4o4RtYz5+SHEVC7Uxss/uQkiZtyE4e7hOQueyvAs4nyb8QLn5fKb2nPRXiaZDYbrY9MynNbDeKP0saXbACSBvNh2RJiimZMRtFvu64HmsDmwVuNYEzGXxXNydPqFmpM43wTA+wzVR0RP8AKjTTbcPPyho7kiwQUmB0ud8o8znCfxhxNv8AGJHLTzgKq7rARbQC3oKbLoy1cRNhpks5N1ocIbpG6zuWiMJ2aYH7JLmQJUbUViryS2FplBpIiUQw3NDTqRY5IveHc+KewSR1v7P0VRwrsuIBOvuiDVlZ08YmI4ID9QVOwuy2PUTticUZG4fda8LhgPi2y67q2tkwjqnQZBTKT6CktgvekOco6oNPFZ3VBq5SkZthucludBQe+buEp9QErRIizQaqVUqSs6IFVxFyCCMIJRApjRuwdfQrZxDmuQx0FdLjCzaN8ctBv4SIIkbLJj2t4ZvIgA89J8CtIKGsyWlu4KOi3tHFq7i24VUgM/XZG2k7h4otMTsbwPI+CRlZaI5Zd2ERBK6OExhFnCRuNOq5/DPh5JrhEEWBInbi9fVD2ONp2jtW5q4HNJwc8Am5j+PJOBWZ0p2UWBUeEZ/VE54Ga52NxQ0/hC2KUkga1biIB1MRyJ3RVwQWsbJ+KYGV9/M8gstFheZOVz1IyjutHu3Bhc6xdlzFp9clTM029isY6C6YknIabD6qYOhLXE6gR47esigo0S88TvlHzEnyTalY7w0WFoPlon+iFt2xuIqBoLRAAsO+dtz9lkq1CT5dgB+/irDRN78vH8K20JuXCLZZ80KkN8n0LFSc7IXVAMro6tATY+KQWqlTM5Wi3OlRwEq2tCtwumSQthLRubzQIEz0rQqc8DVIjcqw0LE7dll+yAyUwBSEBQ3D04BcdbflZMTVJiMvwtOKdADRoL/dYq1iBs36qFt2RkfiEv8AHr+Ems6AB3THrPXNx0W0TnkU8oWqiVbVQg2lEClBGgAwjaUqUbCgAytuEqSI2WNHSdBUs0i6Z0goShBVyoOkz8LiKjIkuAe3/kLz9fErmVGgiQuzUAIO8ESuQ2oTnffdVEiaXTF0jmNlHRAzy8/UK5+EwgYdFZh8I62Bd8AEzCe5wAklcbD1eFw63PLVa/aDzAAuDrmoa2bRmuInE4ouPIZJLY7+vFUW3gIQFZi27DFR0jwWs4kZRMAATvlKyNNwBvmns168tifwpaLi38h42r8LWgQ0Q4xzGqzv+eNj2sne03H4R/8AI/ZBjKRPC4fqaMtwLyhCndsCq8SSltaTdPo4YESYymO/ktFZoAAym572/Kd0DTltmPgP37Kn5c0eIcLRt90kboIb8I16Y8+JSSFA/LknQk67NDqYASxTQ+9VtjdA3T6O4BKNjFFFztnai4hAwzdRROyWDUWPEO+J3YK1ERMJGZ7kiqbqKLaJjIFFooomBRUY5WomIslWCoogDRTMqyoopZaDOINgmUabiZKiil6RrDfZrYLjsuZh6YJc2IMKKJI0kuhLrWPQ/lLLVFFaMmrZHhUDCtRMz/ZYGqj1FEFeBYdvxDv5BdJ2GBuYaMidTsQrUWc3s1xJOLMNdzTN5AAg6k2t0C0YTEDgjUTMi1zIjc3UUVNaIhK5CxTgFwdmZjTv4rNiKxJuqUTiTN0tCnOlW1yiioxshKFRRA7JwqoUUQOj/9k=" alt="Stranger Things Image">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZcnfAhXL5Wm7cIR2ULRvhAZsw0wKO-ehN9Q&s" alt="Stranger Things Image">
+      <img src="gallery1.jpg" alt="img4">
+      <img src="gallery2.jpg" alt="img5">
+      <img src="gallery3.jpg" alt="img6">
+      <img src="gallery4.jpg" alt="img7">
+    </div>
+  </section>
+
+   <!-- footer -->
+  <footer class="footer">
+  <p>&copy; 2026 Stranger Things Fan Page</p>
+  <p>Designed by <span>Shivani Pal</span></p>
+  <p>This website is created for educational purposes only.</p>
+</footer>
+
+</body>
+</html>
