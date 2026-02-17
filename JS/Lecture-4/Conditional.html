@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditional in JS</title>
+</head>
+<body>
+    
+
+    <script>
+        //if-else statement
+        let age=25;
+        if(age>=18){
+            console.log('You are eligible to vote');
+        }
+        else{
+            console.log('You are not eligible to vote');
+        }
+
+        //if-else if-else statement
+        let marks=85;
+        if(marks>=90){
+            console.log('Grade: A');
+        }
+        else if(marks>=80){
+            console.log('Grade: B');
+        }
+        else if(marks>=70){
+            console.log('Grade: C');
+        }
+        else if(marks>=60){
+            console.log('Grade: D');
+        }
+        else{
+            console.log('Grade: F');
+        }
+
+        
+        //nested if statement   
+        let num=10;
+        if(num>0){
+            if(num%2==0){
+                console.log('The number is positive and even');
+            }
+            else{
+                console.log('The number is positive and odd');
+            }
+        }
+        else if(num<0){
+            if(num%2==0){
+                console.log('The number is negative and even');
+            }
+            else{
+                console.log('The number is negative and odd');  
+            }
+        }
+        else{
+            console.log('The number is zero');
+        }
+
+        //ternary operator
+        let result=(age>=18)?'You are eligible to vote':'You are not eligible to vote';
+        console.log(result);        
+
+    </script>
+</body>
+</html>
