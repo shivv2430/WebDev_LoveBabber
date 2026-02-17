@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions in JS</title>
+</head>
+<body>
+    <script>
+        // Function Declaration
+        function sumofdigit(a,b){
+            console.log("sum of two digit :",(a+b));
+        }
+        sumofdigit(10,20);
+        
+       const c = 20;
+       const d = 30;
+       sumofdigit(c,d);
+
+       // Function Expression
+       const Sum = function(a,b){
+        console.log("sum of two digit :",(a+b));
+       }
+       Sum(10,20);  
+
+
+       // Arrow Function
+       const sum = (a,b) => {
+        console.log("sum of two digit :",(a+b));
+       }
+       sum(10,20);  
+
+       //Nested Function
+       function outer(){
+        console.log("This is outer function");
+        function inner(){
+            console.log("This is inner function");
+        }
+        inner();    
+         }
+            outer();
+
+        function addSquare(a,b){
+
+            const sa=square();
+            const sb=square(b);
+           
+
+            function square(num){
+                return num*num;
+            }
+             return sa+sb;
+        }
+
+    </script>
+</body>
+</html>
