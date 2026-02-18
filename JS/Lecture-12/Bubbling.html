@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubbling</title>
+</head>
+<body>
+
+    <style>
+        .container{
+    background-color: teal;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 450px;
+    padding: 10px;
+    row-gap: 10px;
+}
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    display:flex;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+}
+    </style>
+
+     <div id="container"  id = "container">
+        <div class="box" id="box1" > box1</div>
+        <div class="box random" id="box2" >box2</div>
+        <div class="box" id="box3">box3</div>
+        <div class="box" id="box4">box4</div>
+    </div>
+    
+    <script>
+        //Event Bubbling
+        const container = document.getElementById('container');
+        container.addEventListener('click',()=>{
+            console.log('you clicked on container');
+        })
+        const box1 = document.getElementById('box1');
+        box1.addEventListener('click',()=>{
+            console.log('you clicked on box1');
+        })
+        const nameInput = document.getElementById('name');
+        nameInput.addEventListener('click',()=>{
+            console.log('you clicked on name input')
+            
+        })
+        nameInput.addEventListener('keydown',(e)=>{
+            console.log('you are pressing a key:',e.key)
+        })
+        const box3 = document.getElementById('box3');
+        box3.addEventListener('click',(event)=>{
+            console.log('you clicked on box3')
+           
+        })
+        const box4 = document.getElementById('box4');
+        box4.addEventListener('click',(event)=>{
+            console.log('you clicked on box4')  
+            
+        })
+
+
+        //Capturing
+        //By default event bubbling happens in js but we can also make event capturing happen by passing third parameter as true in addEventListener method     
+        //In capturing the event is first captured by the outermost element and then propagated to the inner elements. So in below example if we click on box1 then first container's event will be triggered and then box1's event will be triggered   
+        //In bubbling the event is first captured by the innermost element and then propagated to the outer elements. So in below example if we click on box1 then first box1's event will be triggered and then container's event will be triggered    
+//document.getElementById("parent").addEventListener("click", () => {
+//console.log("Parent clicked");
+//});
+
+//document.getElementById("child").addEventListener("click", () => {
+//   console.log("Child clicked");
+// });
+
+        container.addEventListener('click',()=>{
+            console.log('you clicked on container');    
+        },true)
+        box1.addEventListener('click',()=>{
+            console.log('you clicked on box1');
+        },true)
+        nameInput.addEventListener('click',()=>{
+            console.log('you clicked on name input')
+        },true) 
+        box3.addEventListener('click',(event)=>{
+            console.log('you clicked on box3')
+        },true)
+        box4.addEventListener('click',(event)=>{
+            console.log('you clicked on box4')
+        },true)
+
+    </script>
+</body>
+</html>

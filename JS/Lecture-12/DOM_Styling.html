@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom-styling</title>
+    
+</head>
+
+<body>
+
+    <style>
+        .container{
+    background-color: teal;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 450px;
+    padding: 10px;
+    row-gap: 10px;
+}
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    display:flex;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+}
+    </style>
+
+    <div id="container"  id = "container">
+        <div class="box" id="box1" onclick="myfunction()"> box1</div>
+        <div class="box random" id="box2" onmouseover="myfunction()">box2</div>
+        <div class="box" id="box3">box3</div>
+        <div class="box" id="box4">box4</div>
+    </div>
+    <form action="#">
+        <input type="text" name="name" id="name" placeholder="enter your name" onkeydown="keydownEvent()" onkeyup="keyupEvent()" onkeypress="keypressEvent(event)">
+    </form>
+
+   <script >
+    function myfunction(){
+    console.log('you clicked on it')
+}
+
+const mouseOver = () =>{
+     console.log('mouseOver')
+}
+
+function keypressEvent(){
+    console.log('you pressed a key')
+}
+function keydownEvent(){
+    console.log('you are pressing a key')
+}
+function keyupEvent(){
+    console.log('you released a key')
+}
+//Event Listeners
+const box1 = document.getElementById('box1');
+box1.addEventListener('click',(event)=>{
+    console.log('event Object ',event)
+})
+const box2 = document.getElementById('box2');
+box2.addEventListener('mouseover',()=>{
+    console.log('you hovered on box2')
+})
+const nameInput = document.getElementById('name');
+nameInput.addEventListener('keypress',(event)=>{
+    console.log('you pressed a key ',event.key)
+})
+nameInput.addEventListener('keydown',(event)=>{
+    console.log('you are pressing a key ',event.key)
+})
+nameInput.addEventListener('keyup',(event)=>{
+    console.log('you released a key ',event.key)
+})
+
+
+   </script> 
+</body>
+</html>
