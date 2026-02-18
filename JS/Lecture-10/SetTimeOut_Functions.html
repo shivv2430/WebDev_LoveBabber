@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SetTimeOut_Functions</title>
+</head>
+<body>
+    <script>
+        // //method-1
+        // setTimeout(function() {
+        //     console.log("This message is printed after 3 seconds.");
+        // }, 3000);
+
+        // //method-2
+        // const printMessage = () => {
+        //     console.log("This message is printed after 2 seconds.");
+        // };
+        // setTimeout(printMessage, 2000);
+
+        // console.log("This message is printed immediately.");
+
+        // //method-3
+        // function printDelayedMessage() {
+        //     setTimeout(() => {
+        //         console.log("This message is printed after 4 seconds.");
+        //     }, 4000);
+        // }
+        // printDelayedMessage();
+
+        //method-4
+        function getcheese(callback) {
+            setTimeout(() => {
+                const cheese = "🧀 Cheddar";
+                console.log("Cheese is ready!");
+                callback(cheese);
+            }, 2000);
+        }
+        function makeDough(cheese , callback) {
+            setTimeout(() => {  
+                const dough = cheese + " 🫓 Dough";
+                console.log('here is the dough',dough);
+                callback(dough);
+        }, 1000);
+        }
+
+        function bakePizza(dough , callback) {
+            setTimeout(() => {  
+                const pizza = dough + " 🍕 Pizza";
+                console.log('here is the pizza',pizza);
+                callback(pizza);
+        }, 2000);
+        }
+        getcheese((cheese) => {
+            
+            makeDough(cheese, (dough) => {
+                bakePizza(dough, (pizza) => {
+                    console.log("got my pizza:", pizza);
+                });
+                
+            });
+        });
+    </script>
+</body>
+</html>
