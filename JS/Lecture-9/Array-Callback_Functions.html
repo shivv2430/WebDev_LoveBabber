@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array callback functions</title>
+</head>
+<body>
+    <script>
+        const a = [1, 2, 3, 4, 5];
+        const firstnegative = (num) => {
+            return num < 0;
+        };
+        const result = a.find(firstnegative);
+        console.log("The first negative number is:", result);
+
+        const resultIndex = a.findIndex(firstnegative);
+        console.log("The index of the first negative number is:", resultIndex);
+
+        const eachElement = (num) => {
+            console.log(num);
+        };
+        a.forEach(eachElement);
+        
+    </script>
+</body>
+</html>
