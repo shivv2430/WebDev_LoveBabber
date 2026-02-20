@@ -33,6 +33,25 @@
             </div>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script>
+        const apiKey = "f8759b1da7c5b208ad1e0cb1c1970541";
+        const apiUrl = "https://api.openweathermap.org/data/2.5/weather?&units=metric&q=";
+        
+        const searchBox = document.getElementById("city-input");
+        const searchButton = document.querySelector(".search button");
+
+        async function CheckWeather(city) {
+            const response = await fetch(apiUrl + `&appid=${apikey}`);
+            var data = await response.json();
+            console.log(data);
+
+            document.querySelectorAll(".city").innerHTML = data.name ;
+            document.querySelectorAll(".temp").innerHTML =Math.round(data.main.temp) + "°c";
+            document.querySelectorAll(".humidity").innerHTML = data.main.humidity + "%";
+            document.querySelectorAll(".wind").innerHTML = data.wind.speed + " Km/hr";
+        }
+
+        CheckWeather();
+    </script>
 </body>
 </html>
