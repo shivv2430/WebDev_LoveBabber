@@ -1,4 +1,4 @@
-const APIKEY = "your_api_key_here"; // Replace with your actual API key
+const APIKEY = "YOUR AOI KEY"; // Replace with your actual API key
         const apiUrl = "https://api.openweathermap.org/data/2.5/weather?&units=metric&q=";
         
         const searchBox = document.getElementById("city-input");
