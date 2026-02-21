@@ -10,22 +10,25 @@
     <div class="card">
         <div class="search">
             <input type="text" id="city-input" placeholder="Enter city name" spellcheck="false">
-            <button > <img src="Images/search.png" ></button>
+            <button > <img src="Images/search.png" alt="Search"></button>
+        </div>
+        <div class="error">
+            <p>Invalid city name</p>
         </div>
         <div class="weather">
-            <img src="Images/rain.jpg" class="weather_icon">
+            <img src="Images/rain.png" class="weather-icon">
             <h1 class="temp">22°c</h1>
             <h2 class="city">New York</h2>
             <div class="details">
                 <div class="col">
-                    <img src="Images/humidity.jpg" >
+                    <img src="Images/humidity.png" >
                     <div>
                       <p class="humidity">50%</p>
                         <p>Humidity</p>
                     </div>
                 </div>
                 <div class="col">
-                    <img src="Images/wind.jpg" >
+                    <img src="Images/wind.png" >
                     <div>
                       <p class="wind">15 Km/hr</p>
                         <p>Wind Speed</p>
@@ -33,25 +36,7 @@
             </div>
         </div>
     </div>
-    <script>
-        const apiKey = "f8759b1da7c5b208ad1e0cb1c1970541";
-        const apiUrl = "https://api.openweathermap.org/data/2.5/weather?&units=metric&q=";
-        
-        const searchBox = document.getElementById("city-input");
-        const searchButton = document.querySelector(".search button");
-
-        async function CheckWeather(city) {
-            const response = await fetch(apiUrl + `&appid=${apikey}`);
-            var data = await response.json();
-            console.log(data);
-
-            document.querySelectorAll(".city").innerHTML = data.name ;
-            document.querySelectorAll(".temp").innerHTML =Math.round(data.main.temp) + "°c";
-            document.querySelectorAll(".humidity").innerHTML = data.main.humidity + "%";
-            document.querySelectorAll(".wind").innerHTML = data.wind.speed + " Km/hr";
-        }
-
-        CheckWeather();
+    <script src="script.js"></script>
     </script>
 </body>
 </html>
