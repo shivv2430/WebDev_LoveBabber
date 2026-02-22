@@ -9,11 +9,10 @@ function addTask() {
 
   const li = document.createElement("li");
   li.innerHTML = `
-    <i class="ri-checkbox-blank-circle-line"></i>
-    <span>${inputBox.value}</span>
-    <span class="delete"><i class="ri-close-line"></i></span>
-  `;
-
+  <i class="checkbox ri-checkbox-blank-circle-line"></i>
+  <span class="task-text">${inputBox.value}</span>
+  <span class="delete"><i class="ri-close-line"></i></span>
+`;
   listContainer.appendChild(li);
   inputBox.value = "";
   saveData();
@@ -21,23 +20,24 @@ function addTask() {
 
 listContainer.addEventListener("click", function (e) {
 
+  const li = e.target.closest("li");
+  if (!li) return;
+  // delete task
   if (e.target.closest(".delete")) {
-    e.target.closest("li").remove();
+    li.remove();
     saveData();
     return;
   }
 
-  const li = e.target.closest("li");
-  if (li) {
+  
     li.classList.toggle("checked");
 
-    const icon = li.querySelector("i");
-    icon.classList.toggle("ri-checkbox-blank-circle-line");
-    icon.classList.toggle("ri-checkbox-circle-fill");
+    const checkbox = li.querySelector(".checkbox");
+    checkbox.classList.toggle("ri-checkbox-blank-circle-line");
+    checkbox.classList.toggle("ri-checkbox-circle-fill");
 
     saveData();
-  }
-});
+  });
 
 function saveData() {
   localStorage.setItem("data", listContainer.innerHTML);
@@ -47,4 +47,4 @@ function showTask() {
   listContainer.innerHTML = localStorage.getItem("data") || "";
 }
 
-showTask();
+showTask(); 
