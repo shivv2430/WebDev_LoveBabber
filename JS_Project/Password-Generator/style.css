@@ -23,7 +23,7 @@ body{
 .container h1{
     font-weight: 500;
     font-size: 45px;
-    color: #92f4c3;
+    color: #1d3227;
 }
 
 .container h1 span{
@@ -40,8 +40,9 @@ body{
     align-items: center;
     justify-content: space-between;
     padding: 26px 20px;
-    background-color: rgb(240, 239, 239);
+    background-color: #fff;
     border-radius: 20px;
+    border: 1px solid #1d3227;
 }
 .display img{
     width: 30px;
@@ -59,10 +60,10 @@ body{
 }
 
 .container button{
-    border:0 ;
+    border:3px solid #062e1b;
     padding: 0;
-    background-color: #1cd67f;
-    color: lightgreen;
+    background-color: #0c623a;
+    color: rgb(246, 248, 246);
     font-size: 22px;
     font-weight: 300px;
     display: flex;
