@@ -13,52 +13,67 @@ body{
     justify-content: center;
     align-items: center;
     
+    margin: 0;
     
 }
 
-    #notifications{
-    position: fixed;
-    height: auto;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-}
 
- .container{
-    width: 90%;
-    max-width: 1000px;
+
+.container{
+    width: 90%;              
+    max-width: 900px;        /* increased from 700px */
     padding: 80px;
     border-radius: 50px;
     background-color: #FAB95B;
     height: 500px;
 
-    display: flex;              /* ✅ fix */
+    display: flex;
     flex-direction: column;
-    align-items: center;       /* horizontal center */
-     justify-content: center;   /* vertical center */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    box-shadow: 5px 5px 10px gray;
+    border:2px solid #333;
+}
+ /* .container{
+    
+    /* margin: 150px 350px;  
+    width: 100%;
+    max-width: 700px; 
+    padding: 80px;
+    border-radius: 50px;
+    background-color: #FAB95B;
+    height: 500px;
+
+    display: flex;              
+    flex-direction: column;
+    align-items: center;       
+     justify-content: center;   
     text-align: center;
 
      box-shadow: 5px 5px 10px gray;
     border:2px solid #333; 
- } 
+ }  */
 .container h1{
     margin-top: 10px;
     font-weight: 500;
     font-size: 45px;
     text-align: center;
     /* color: #1d3227; */
-
+    white-space: nowrap;
 }
 
 #notifications{
     position: fixed;
-    top: 20px;
-    right: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 1000;
 }
 
 .toast{
-    background: white;
+    background: #ec9b29;
     padding: 15px 20px;
     margin-top: 10px;
     border-radius: 8px;
@@ -66,6 +81,25 @@ body{
     gap: 10px;
     align-items: center;
     box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+.container .toast{
+    background: transparent;
+    padding: 0;
+    margin-top: 10px;
+    box-shadow: none;
+}
+
+.notification-toast{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+}
+
+.toast.generate_password{
+    background: #4CAF50;
+    color: white;
 }
 .container h1 span{
     color: #000000;
@@ -98,14 +132,15 @@ body{
 .container button img{
     width:28px;
     margin-right: 10px;
+    filter: brightness(0) invert(1);
 }
 
 .container button{
     margin-top: 10px;
     border:3px solid #000000;
     padding: 0;
-    background-color: #f39f2b;
-    box-shadow: 5px 5px 10px #ec9b29;
+    background-color: #4CAF50;
+    box-shadow: 5px 5px 10px #388E3C;
     color: #fff;
     font-size: 22px;
     font-weight: 300px;
@@ -116,4 +151,14 @@ body{
     border-radius: 5px;
     cursor: pointer;
 
+}
+
+footer{
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'poppins',sans-serif;
+    color: #333;
+    font-size: 14px;
 }

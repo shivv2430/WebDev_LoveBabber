@@ -33,30 +33,34 @@ function copyPassword(){
 }
 
 function createToast(type,icon,title,text){
+    // Remove any existing toasts
+    document.querySelectorAll('.notification-toast').forEach(toast => toast.remove());
+    
     let NewToast = document.createElement('div');
     NewToast.innerHTML = `
-    <div class="toast ${type}">
+    <div class="toast notification-toast ${type}">
             <i class="${icon}"></i>
             <div class="content">
                 <div class="title">${title}</div>
                 <span>${text}</span>
             </div>
-            <i class="ri-checkbox-circle-fill" onclick="this.parentElement.remove()"></i>
+            <i class="" onclick="this.parentElement.remove()"></i>
         </div>`;
-        notifications.appendChild(NewToast);
+        document.body.appendChild(NewToast);
         NewToast.timeOut = setTimeout(
             ()=>NewToast.remove(),5000
         )
 }
 
 generate_password.onclick = function(){
+    createPassword();
     let type = 'generate_password';
-    let icon = 'ri-checkbox-circle-fill';
+    let icon = 'fa-solid fa-circle-check';
     let title = 'generate_password';
     let text = 'New password Generate';
     createToast(type,icon,title,text);
 }
 copyBtn.onclick = function (){
     copyPassword();
-    createToast('copy','ri-file-copy-fill','Copied','Password copied');
+    createToast('copy','fa-solid fa-copy','Copied','Password copied');
 }

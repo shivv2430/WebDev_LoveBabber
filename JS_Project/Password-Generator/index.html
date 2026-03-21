@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Password Generator</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head >
 <body>
 
@@ -16,13 +17,17 @@
             <img src="image/copy.png" onclick="copyPassword()" id="copyPassword">
             </div>
         
-        <button onclick="createPassword()" id="generate_password"> 
+        <div class="toast">
+            <button id="generate_password"> 
                <img src="image/key.png">
+                <!-- <i class="fa-solid fa-key"></i> -->
             Generate Password
         </button>
+        </div>
     </div>
     </div>
    </div>
+   <footer>Built by Shivani</footer>
     <script src="script.js"></script>
 </body>
 </html>
