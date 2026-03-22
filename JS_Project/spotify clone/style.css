@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #121212, #1db954);
+  color: #fff;
+}
+
+.app {
+  width: min(1100px, 90%);
+  margin: 0 auto;
+  padding: 40px 0 60px;
+}
+
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.tag {
+  color: #d6ffd6;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  margin-bottom: 12px;
+}
+
+.subtitle {
+  color: #f2f2f2;
+  margin-bottom: 24px;
+}
+
+.play-btn {
+  border: none;
+  background: #fff;
+  color: #121212;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.playlist h2 {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+.track-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.track-card {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  padding: 18px;
+  backdrop-filter: blur(10px);
+}
+
+.cover {
+  width: 100%;
+  height: 180px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #1db954, #191414);
+  margin-bottom: 16px;
+}
+
+.track-card h3 {
+  margin-bottom: 8px;
+}
+
+.track-card p {
+  color: #d7d7d7;
+}
