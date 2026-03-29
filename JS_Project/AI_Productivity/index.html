@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Productivity Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>⚡ Productivity Dashboard</h1>
+        <p>Stay focused. Stay ahead.</p>
+    </header>
+
+    <div class="grid">
+
+        <!-- Card 1 -->
+        <div class="card">
+            <h2>📊 Today's Stats</h2>
+            <p>Tasks Completed: <span>8</span></p>
+            <p>Focus Time: <span>5 hrs</span></p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+            <h2>⏱ Focus Timer</h2>
+            <p id="timer">25:00</p>
+            <button onclick="startTimer()">Start</button>
+            <button onclick="pauseTimer()">Pause</button>
+            <button onclick="resetTimer()">Restart</button>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card">
+            <h2>📝 Tasks</h2>
+            <ul>
+                <li>Study DSA</li>
+                <li>Practice Circuits</li>
+                <li>Web Dev Project</li>
+            </ul>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
