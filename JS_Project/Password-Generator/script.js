@@ -104,12 +104,10 @@ function showToast(message, icon) {
 // Event Listeners
 lengthSlider.addEventListener("input", () => {
     lengthVal.textContent = lengthSlider.value;
-    generatePassword();
+    // Removed auto-generation here
 });
 
-[uppercaseCheck, lowercaseCheck, numbersCheck, symbolsCheck].forEach(el => {
-    el.addEventListener("change", generatePassword);
-});
+// Removed auto-generation on checkbox changes
 
 generateBtn.addEventListener("click", () => {
     generatePassword();
@@ -118,5 +116,5 @@ generateBtn.addEventListener("click", () => {
 
 copyBtn.addEventListener("click", copyPassword);
 
-// Initialize
-generatePassword();
+// Initialize - Input box stays blank at starting
+lengthVal.textContent = lengthSlider.value;
