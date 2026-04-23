@@ -27,18 +27,27 @@ header {
     color: #F3EFEF;
 }
 
+.nav a {
+    color: #F3EFEF;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+
 .login {
     display: flex;
     gap: 10px;
 }
 
 .login-button {
-    padding: 10px;
-    border-radius: 5px;
+    padding: 8px 20px;
+    border-radius: 20px;
     border: none;
-    font-size: 16px;
+    font-size: 12px;
     font-weight: bold;
     color: #000000;
+    margin: 14px;
+    margin-left: 20px;
     background-color: #F3EFEF;
 }
 
