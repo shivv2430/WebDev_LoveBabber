@@ -59,3 +59,38 @@ header {
     max-height: 150px;
     padding: 15px;
 }
+
+.spider-container {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+    perspective: 1000px;
+    /* creates 3D space */
+}
+
+.spider {
+    width: 150px;
+    transition: transform 0.5s ease;
+}
+
+/* 3D hover effect */
+.spider:hover {
+    transform: rotateY(20deg) rotateX(10deg) scale(1.1);
+}
+
+/* floating animation */
+@keyframes floatSpider {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+.spider {
+    animation: floatSpider 3s ease-in-out infinite;
+}
