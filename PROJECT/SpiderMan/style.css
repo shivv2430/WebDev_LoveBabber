@@ -73,6 +73,12 @@ header {
     transition: transform 0.5s ease;
 }
 
+.img {
+    height: 800px;
+    width: auto;
+    border-radius: 25px;
+}
+
 /* 3D hover effect */
 .spider:hover {
     transform: rotateY(20deg) rotateX(10deg) scale(1.1);
