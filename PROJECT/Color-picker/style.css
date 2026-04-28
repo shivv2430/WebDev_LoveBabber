@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    transition: background 0.5s ease;
+}
+
+.container {
+    margin-top: 150px;
+}
+
+h1 {
+    font-size: 32px;
+}
+
+#colorCode {
+    font-size: 24px;
+    margin: 20px 0;
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 16px;
+    border: none;
+    background: black;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+}
