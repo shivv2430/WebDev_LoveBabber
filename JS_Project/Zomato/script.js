@@ -3,7 +3,7 @@ const restaurants = [
         name: "Burger King",
         cuisine: "Fast Food",
         rating: "4.2",
-        image: "images/BurgerKin.jpg"
+        image: "images/BurgerKing.jpg"
     },
     {
         name: "Pizza Hut",
@@ -27,7 +27,7 @@ const restaurants = [
 
 const container = document.getElementById("restaurantList");
 
-function displayRestaurants(data){
+function displayRestaurants(data) {
     container.innerHTML = "";
     data.forEach(r => {
         const card = `
@@ -46,7 +46,7 @@ function displayRestaurants(data){
 
 // Search functionality
 
-document.getElementById("search").addEventListener("input", function(){
+document.getElementById("search").addEventListener("input", function () {
     const value = this.value.toLowerCase();
     const filtered = restaurants.filter(r => r.name.toLowerCase().includes(value));
     displayRestaurants(filtered);
