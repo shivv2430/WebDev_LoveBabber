@@ -3,20 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Toast-Notification</title>
+    <meta name="description" content="A premium, glassmorphism-inspired Toast Notification system with smooth animations.">
+    <title>Modern Toast Notifications</title>
+    <!-- Google Fonts: Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 </head>
 <body>
-   <div id="notifications">
-    </div>
+    <div id="notifications" class="notifications-container"></div>
     
-    <div class="buttons">
-        <button id="success">Success</button>
-        <button id="error">Error</button>
-        <button id="warning">Warning</button>
-        <button id="info">Info</button>
-    </div>
+    <main class="main-content">
+        <h1 class="page-title">Toast Notifications</h1>
+        <p class="page-subtitle">Click the buttons below to trigger beautiful notifications</p>
+        
+        <div class="buttons-grid">
+            <button id="success" class="btn btn-success">
+                <i class="fa-solid fa-circle-check"></i> Success
+            </button>
+            <button id="error" class="btn btn-error">
+                <i class="fa-solid fa-circle-xmark"></i> Error
+            </button>
+            <button id="warning" class="btn btn-warning">
+                <i class="fa-solid fa-triangle-exclamation"></i> Warning
+            </button>
+            <button id="info" class="btn btn-info">
+                <i class="fa-solid fa-circle-info"></i> Info
+            </button>
+        </div>
+    </main>
 
     <script src="script.js"></script>
 </body>

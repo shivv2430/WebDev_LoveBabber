@@ -1,50 +1,74 @@
-let notifications = document.getElementById('notifications');
-let success = document.getElementById('success');
-let error = document.getElementById('error');
-let warning = document.getElementById('warning');
-let info = document.getElementById('info');
+const notifications = document.getElementById('notifications');
+const buttons = {
+    success: document.getElementById('success'),
+    error: document.getElementById('error'),
+    warning: document.getElementById('warning'),
+    info: document.getElementById('info')
+};
 
-function createToast(type,icon,title,text){
-    let NewToast = document.createElement('div');
-    NewToast.innerHTML = `
-    <div class="toast ${type}">
-            <i class="${icon}"></i>
-            <div class="content">
-                <div class="title">${title}</div>
-                <span>${text}</span>
-            </div>
-            <i class="fa-solid fa-xmark" onclick="this.parentElement.remove()"></i>
-        </div>`;
-        notifications.appendChild(NewToast);
-        NewToast.timeOut = setTimeout(
-            ()=>NewToast.remove(),5000
-        )
+const toastDetails = {
+    success: {
+        icon: 'fa-solid fa-circle-check',
+        title: 'Success',
+        message: 'Action completed successfully!'
+    },
+    error: {
+        icon: 'fa-solid fa-circle-xmark',
+        title: 'Error',
+        message: 'Something went wrong. Please try again.'
+    },
+    warning: {
+        icon: 'fa-solid fa-triangle-exclamation',
+        title: 'Warning',
+        message: 'Please review the information provided.'
+    },
+    info: {
+        icon: 'fa-solid fa-circle-info',
+        title: 'Information',
+        message: 'New updates are available for your account.'
+    }
+};
+
+function removeToast(toast) {
+    toast.classList.add('hiding');
+    // Wait for animation to finish before removing from DOM
+    toast.addEventListener('animationend', () => {
+        toast.remove();
+    });
 }
-success.onclick = function(){
-    let type = 'success';
-    let icon = 'fa-solid fa-circle-check'
-    let title = 'Success';
-    let text = 'This is a Success Toast';
-    createToast(type,icon,title,text);
+
+function createToast(type) {
+    const { icon, title, message } = toastDetails[type];
+    
+    const toast = document.createElement('div');
+    toast.className = `toast toast-${type}`;
+    
+    toast.innerHTML = `
+        <i class="${icon}"></i>
+        <div class="toast-content">
+            <div class="toast-title">${title}</div>
+            <div class="toast-message">${message}</div>
+        </div>
+        <button class="close-btn">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+    `;
+
+    // Append to container
+    notifications.appendChild(toast);
+
+    // Auto remove after 5 seconds
+    const timeoutId = setTimeout(() => removeToast(toast), 5000);
+
+    // Close button functionality
+    const closeBtn = toast.querySelector('.close-btn');
+    closeBtn.onclick = () => {
+        clearTimeout(timeoutId);
+        removeToast(toast);
+    };
 }
-error.onclick = function (){
-   let type = 'error';
-    let icon = 'fa-solid fa-exclamation'
-    let title = 'Error';
-    let text = 'This is a error Toast';
-    createToast(type,icon,title,text);
-}
-warning.onclick = function (){
-   let type = 'warning';
-    let icon = 'fa-solid fa-triangle-exclamation'
-    let title = 'Warning';
-    let text = 'This is a warning Toast';
-    createToast(type,icon,title,text);
-}
-info.onclick = function (){
-   let type = 'info';
-    let icon = 'fa-solid fa-circle-info'
-    let title = 'Info';
-    let text = 'This is a info Toast';
-    createToast(type,icon,title,text);
-}
+
+// Add event listeners to buttons
+Object.keys(buttons).forEach(type => {
+    buttons[type].onclick = () => createToast(type);
+});
