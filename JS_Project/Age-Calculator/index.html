@@ -3,20 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Age-Calculator</title>
+    <title>Premium Age Calculator</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="calculator">
-            <h1>Age <br> <span>Calculator</span> </h1>
-            <div class="input-box">
-                <input type="date" id="date">
-                <button onclick="calculateAge()">Calculate</button>
-            </div>
-            <p id="result"></p>
-        </div>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
     </div>
+
+    <main class="container">
+        <section class="calculator-card">
+            <header>
+                <h1>Age <span>Calculator</span></h1>
+                <p>Enter your date of birth to discover your exact age.</p>
+            </header>
+
+            <div class="input-wrapper">
+                <div class="input-group">
+                    <label for="date">Date of Birth</label>
+                    <input type="date" id="date">
+                </div>
+                <button id="calculateBtn" onclick="calculateAge()">
+                    <span>Calculate Age</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+            </div>
+
+            <div id="result" class="result-grid">
+                <div class="result-card" id="years-card">
+                    <span class="value" id="years">--</span>
+                    <span class="label">Years</span>
+                </div>
+                <div class="result-card" id="months-card">
+                    <span class="value" id="months">--</span>
+                    <span class="label">Months</span>
+                </div>
+                <div class="result-card" id="days-card">
+                    <span class="value" id="days">--</span>
+                    <span class="label">Days</span>
+                </div>
+            </div>
+
+            <footer class="info-text">
+                <p id="full-result-text">Select a date to begin</p>
+            </footer>
+        </section>
+    </main>
+
     <script src="script.js"></script>
 </body>
 </html>
