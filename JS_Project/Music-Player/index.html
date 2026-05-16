@@ -3,39 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music_Player</title>
+    <title>Modern Music Player</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/8674758a92.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="container">
         <div class="music_player">
-        <nav>
-            <div class="circle">
-                <i class="fa-solid fa-angle-left"></i>
+            <nav>
+                <div class="circle">
+                    <i class="fa-solid fa-angle-left"></i>
+                </div>
+                <div class="now-playing">Now Playing</div>
+                <div class="circle">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </nav>
+            
+            <div class="img-area">
+                <img src="media/468-thumbnail.png" class="song-img" id="songImg" alt="Album Art">
             </div>
-            <div class="circle">
-                <i class="fa-solid fa-bars"></i>
+            
+            <div class="song-info">
+                <h1 class="title">Despacito</h1>
+                <p class="artist">Luis Fonsi Ft. Daddy Yankee</p>
             </div>
-        </nav>
-        <img src="media/468-thumbnail.png" class="song-img">
-        <h1>Despacito</h1>
-        <p>Luis Fonsi Ft. Puerto Ricon</p>
 
-        <audio  id="song">
-            <source src="media/audio.mp3" type="audio/mp3">
-        </audio>
-        <input type="range" value="0" id="progress">
-         
-        <div class="controls">
-            <div><i class="fa-solid fa-backward"></i></div>
-            <div onclick="playPause()"><i class="fa-solid fa-play" id="ctrlIcon"></i></div>
-            <div><div><i class="fa-solid fa-forward"></i></div></div>
+            <audio id="song">
+                <source src="media/audio.mp3" type="audio/mp3">
+            </audio>
+            
+            <div class="progress-area">
+                <input type="range" value="0" id="progress">
+                <div class="time-container">
+                    <span id="currentTime">0:00</span>
+                    <span id="durationTime">0:00</span>
+                </div>
+            </div>
+             
+            <div class="controls">
+                <div class="btn"><i class="fa-solid fa-backward-step"></i></div>
+                <div class="btn play-btn" onclick="playPause()"><i class="fa-solid fa-play" id="ctrlIcon"></i></div>
+                <div class="btn"><i class="fa-solid fa-forward-step"></i></div>
+            </div>
         </div>
-
-
-    </div>
     </div>
     <script src="script.js"></script>
 </body>
-</html> 
+</html>
