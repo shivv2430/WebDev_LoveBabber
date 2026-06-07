@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placement Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>🎯 Placement Tracker</h1>
+
+        <div class="form-container">
+            <input type="text" id="company" placeholder="Company Name">
+            <input type="text" id="role" placeholder="Job Role">
+
+            <select id="status">
+                <option value="Applied">Applied</option>
+                <option value="Assessment">Assessment</option>
+                <option value="Interview">Interview</option>
+                <option value="Selected">Selected</option>
+                <option value="Rejected">Rejected</option>
+            </select>
+
+            <button onclick="addApplication()">Add Application</button>
+        </div>
+
+        <div class="dashboard">
+            <div class="card">
+                <h3>Total</h3>
+                <p id="total">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Selected</h3>
+                <p id="selected">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Interview</h3>
+                <p id="interview">0</p>
+            </div>
+        </div>
+
+        <div class="filters">
+            <input type="text" id="search" placeholder="Search Company..." onkeyup="renderApplications()">
+
+            <select id="filter" onchange="renderApplications()">
+                <option value="All">All</option>
+                <option value="Applied">Applied</option>
+                <option value="Assessment">Assessment</option>
+                <option value="Interview">Interview</option>
+                <option value="Selected">Selected</option>
+                <option value="Rejected">Rejected</option>
+            </select>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Company</th>
+                    <th>Role</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody id="tableBody"></tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
