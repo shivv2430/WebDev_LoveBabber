@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Seller Dashboard | Waste2Wealth</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        .dashboard-container {
+            padding: 50px 8%;
+            min-height: 100vh;
+        }
+
+        .dashboard-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .dashboard-title h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .seller-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .form-card,
+        .preview-card {
+            background: white;
+            padding: 30px;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 12px;
+            background: #f1f5f9;
+        }
+
+        .form-group textarea {
+            resize: none;
+            height: 120px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+
+            background:
+                linear-gradient(135deg,
+                    #10b981,
+                    #06b6d4);
+        }
+
+        .preview-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        .preview-card h2 {
+            margin-top: 20px;
+        }
+
+        .preview-card p {
+            margin-top: 10px;
+            color: #64748b;
+        }
+
+        .preview-price {
+            margin-top: 15px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #10b981;
+        }
+
+        .products-list {
+            margin-top: 50px;
+        }
+
+        .products-list h2 {
+            margin-bottom: 20px;
+        }
+
+        .product-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+        }
+
+        .product-table th {
+            background: #10b981;
+            color: white;
+            padding: 15px;
+        }
+
+        .product-table td {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .delete-btn {
+            border: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            background: #ef4444;
+            color: white;
+            cursor: pointer;
+        }
+
+        .dark .form-card,
+        .dark .preview-card,
+        .dark .product-table {
+            background: #1e293b;
+        }
+
+        .dark input,
+        .dark textarea {
+            background: #334155;
+            color: white;
+        }
+
+        @media(max-width:900px) {
+
+            .seller-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .dashboard-title h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            ♻ Waste2Wealth
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="seller.html">Sell</a></li>
+            <li><a href="cart.html">Cart</a></li>
+        </ul>
+
+        <button id="themeBtn">
+            🌙
+        </button>
+
+    </nav>
+
+    <section class="dashboard-container">
+
+        <div class="dashboard-title">
+
+            <h1>Creator Dashboard</h1>
+
+            <p>
+                Turn waste into wealth by selling your creations.
+            </p>
+
+        </div>
+
+        <div class="seller-grid">
+
+            <!-- FORM -->
+
+            <div class="form-card">
+
+                <h2>Add New Product</h2>
+
+                <br>
+
+                <div class="form-group">
+
+                    <label>Product Name</label>
+
+                    <input type="text" id="name" placeholder="Bottle Plant Pot">
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Material Used</label>
+
+                    <input type="text" id="material" placeholder="Plastic Bottle">
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Price (₹)</label>
+
+                    <input type="number" id="price" placeholder="199">
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Image URL</label>
+
+                    <input type="text" id="image" placeholder="Paste image URL">
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Description</label>
+
+                    <textarea id="description" placeholder="Describe your product">
+</textarea>
+
+                </div>
+
+                <button class="submit-btn" onclick="addProduct()">
+
+                    Publish Product
+
+                </button>
+
+            </div>
+
+            <!-- PREVIEW -->
+
+            <div class="preview-card">
+
+                <img id="previewImg" src="https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=600">
+
+                <h2 id="previewName">
+                    Product Name
+                </h2>
+
+                <p id="previewMaterial">
+                    Material Used
+                </p>
+
+                <p id="previewDesc">
+                    Description
+                </p>
+
+                <div class="preview-price" id="previewPrice">
+
+                    ₹0
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- PRODUCT TABLE -->
+
+        <div class="products-list">
+
+            <h2>Your Products</h2>
+
+            <table class="product-table">
+
+                <thead>
+
+                    <tr>
+                        <th>Name</th>
+                        <th>Material</th>
+                        <th>Price</th>
+                        <th>Action</th>
+                    </tr>
+
+                </thead>
+
+                <tbody id="tableBody">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+    <script src="script.js"></script>
+
+    <script>
+
+        // INPUTS
+
+        const nameInput =
+            document.getElementById("name");
+
+        const materialInput =
+            document.getElementById("material");
+
+        const priceInput =
+            document.getElementById("price");
+
+        const imageInput =
+            document.getElementById("image");
+
+        const descriptionInput =
+            document.getElementById("description");
+
+        // LIVE PREVIEW
+
+        function updatePreview() {
+
+            document.getElementById(
+                "previewName"
+            ).innerText =
+                nameInput.value || "Product Name";
+
+            document.getElementById(
+                "previewMaterial"
+            ).innerText =
+                materialInput.value || "Material Used";
+
+            document.getElementById(
+                "previewDesc"
+            ).innerText =
+                descriptionInput.value || "Description";
+
+            document.getElementById(
+                "previewPrice"
+            ).innerText =
+                "₹" + (priceInput.value || 0);
+
+            if (imageInput.value) {
+                document.getElementById(
+                    "previewImg"
+                ).src =
+                    imageInput.value;
+            }
+
+        }
+
+        [
+            nameInput,
+            materialInput,
+            priceInput,
+            imageInput,
+            descriptionInput
+        ].forEach(input => {
+
+            input.addEventListener(
+                "input",
+                updatePreview
+            );
+
+        });
+
+        // PRODUCTS
+
+        let products =
+            JSON.parse(
+                localStorage.getItem("products")
+            ) || [];
+
+        function addProduct() {
+
+            if (
+                !nameInput.value ||
+                !priceInput.value ||
+                !imageInput.value
+            ) {
+                alert("Please fill all fields");
+                return;
+            }
+
+            const product = {
+
+                id: Date.now(),
+
+                name: nameInput.value,
+
+                material: materialInput.value,
+
+                price: Number(priceInput.value),
+
+                image: imageInput.value,
+
+                description:
+                    descriptionInput.value
+
+            };
+
+            products.push(product);
+
+            localStorage.setItem(
+                "products",
+                JSON.stringify(products)
+            );
+
+            alert(
+                "Product Published Successfully 🎉"
+            );
+
+            renderProducts();
+
+            document.querySelector("form")?.reset();
+
+            location.reload();
+
+        }
+
+        function deleteProduct(id) {
+
+            products =
+                products.filter(
+                    p => p.id !== id
+                );
+
+            localStorage.setItem(
+                "products",
+                JSON.stringify(products)
+            );
+
+            renderProducts();
+
+        }
+
+        function renderProducts() {
+
+            const table =
+                document.getElementById(
+                    "tableBody"
+                );
+
+            table.innerHTML = "";
+
+            products.forEach(product => {
+
+                table.innerHTML += `
+
+<tr>
+
+<td>${product.name}</td>
+
+<td>${product.material}</td>
+
+<td>₹${product.price}</td>
+
+<td>
+
+<button
+class="delete-btn"
+onclick="deleteProduct(${product.id})">
+
+Delete
+
+</button>
+
+</td>
+
+</tr>
+
+`;
+
+            });
+
+        }
+
+        renderProducts();
+
+    </script>
+
+</body>
+
+</html>

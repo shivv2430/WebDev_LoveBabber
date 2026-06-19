@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketplace | Waste2Wealth</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        .products-page {
+            padding: 40px 8%;
+            min-height: 100vh;
+        }
+
+        .page-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .page-title h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .controls {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .controls input,
+        .controls select {
+            padding: 14px;
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, .08);
+            min-width: 250px;
+        }
+
+        .market-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .market-card {
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+            transition: .4s;
+        }
+
+        .market-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .market-card img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+        }
+
+        .market-info {
+            padding: 20px;
+        }
+
+        .market-info h3 {
+            margin-bottom: 10px;
+        }
+
+        .market-info p {
+            color: #64748b;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            color: #10b981;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        .buy-btn {
+            width: 100%;
+            margin-top: 15px;
+            padding: 12px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            color: white;
+
+            background:
+                linear-gradient(135deg,
+                    #10b981,
+                    #06b6d4);
+        }
+
+        .cart-badge {
+            background: #10b981;
+            color: white;
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        .dark .market-card {
+            background: #1e293b;
+        }
+
+        .dark .controls input,
+        .dark .controls select {
+            background: #1e293b;
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            ♻ Waste2Wealth
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="seller.html">Sell</a></li>
+            <li><a href="cart.html">Cart</a></li>
+        </ul>
+
+        <div style="display:flex;gap:10px;align-items:center;">
+            <div class="cart-badge">
+                Cart:
+                <span id="cartCount">0</span>
+            </div>
+
+            <button id="themeBtn">
+                🌙
+            </button>
+        </div>
+
+    </nav>
+
+    <section class="products-page">
+
+        <div class="page-title">
+
+            <h1>Marketplace</h1>
+
+            <p>
+                Discover beautiful products made from waste.
+            </p>
+
+        </div>
+
+        <div class="controls">
+
+            <input type="text" id="searchInput" placeholder="Search products...">
+
+            <select id="filterCategory">
+
+                <option value="all">
+                    All Categories
+                </option>
+
+                <option value="plastic">
+                    Plastic
+                </option>
+
+                <option value="cardboard">
+                    Cardboard
+                </option>
+
+                <option value="cd">
+                    CD Craft
+                </option>
+
+            </select>
+
+        </div>
+
+        <div class="market-grid" id="productsContainer">
+
+        </div>
+
+    </section>
+
+    <script src="script.js"></script>
+
+    <script>
+
+        // PRODUCTS
+
+        const products =
+            JSON.parse(
+                localStorage.getItem("products")
+            ) || [];
+
+        const container =
+            document.getElementById(
+                "productsContainer"
+            );
+
+        const searchInput =
+            document.getElementById(
+                "searchInput"
+            );
+
+        const filterCategory =
+            document.getElementById(
+                "filterCategory"
+            );
+
+        const cartCount =
+            document.getElementById(
+                "cartCount"
+            );
+
+        // CART COUNT
+
+        function updateCartCount() {
+
+            const cart =
+                JSON.parse(
+                    localStorage.getItem("cart")
+                ) || [];
+
+            cartCount.textContent =
+                cart.length;
+
+        }
+
+        updateCartCount();
+
+
+        // DISPLAY PRODUCTS
+
+        function renderProducts() {
+
+            const search =
+                searchInput.value.toLowerCase();
+
+            const filter =
+                filterCategory.value;
+
+            container.innerHTML = "";
+
+            products.forEach(product => {
+
+                const matchesSearch =
+
+                    product.name
+                        .toLowerCase()
+                        .includes(search);
+
+                const matchesFilter =
+
+                    filter === "all" ||
+
+                    product.material
+                        .toLowerCase()
+                        .includes(filter);
+
+                if (
+                    matchesSearch &&
+                    matchesFilter
+                ) {
+
+                    const card =
+                        document.createElement("div");
+
+                    card.className =
+                        "market-card";
+
+                    card.innerHTML = `
+
+<img src="${product.image}">
+
+<div class="market-info">
+
+<h3>${product.name}</h3>
+
+<p>
+Made from:
+${product.material}
+</p>
+
+<div class="price">
+₹${product.price}
+</div>
+
+<button
+class="buy-btn"
+onclick="addToCart(${product.id})">
+
+Add To Cart
+
+</button>
+
+</div>
+
+`;
+
+                    container.appendChild(card);
+
+                }
+
+            });
+
+        }
+
+        renderProducts();
+
+
+        // SEARCH
+
+        searchInput.addEventListener(
+            "input",
+            renderProducts
+        );
+
+
+        // FILTER
+
+        filterCategory.addEventListener(
+            "change",
+            renderProducts
+        );
+
+
+        // ADD TO CART
+
+        function addToCart(id) {
+
+            const product =
+                products.find(
+                    p => p.id === id
+                );
+
+            let cart =
+                JSON.parse(
+                    localStorage.getItem("cart")
+                ) || [];
+
+            cart.push(product);
+
+            localStorage.setItem(
+                "cart",
+                JSON.stringify(cart)
+            );
+
+            updateCartCount();
+
+            alert(
+                "Product Added To Cart 🛒"
+            );
+
+        }
+
+    </script>
+
+</body>
+
+</html>
