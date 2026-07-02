@@ -21,3 +21,31 @@ const myFunction = function () {
     console.log("Hello world!");
 }
 console.log(typeof myFunction);       //function
+
+
+//Stack(Premitive)-> copy of variable
+//Heap(Non-Primitive)-> Reference of original value
+// stack(copy)  
+let myYoutubechannel = "shivani.learns"
+
+let anotherYoutubechannel = "shivani.learns"
+
+anotherYoutubechannel = "chaiAur JS"
+
+console.log(myYoutubechannel);      //copy me changes nhi hota to output--> shivani.learns
+console.log(anotherYoutubechannel); //me change hota  to output--> chaiAur JS 
+
+
+
+//  heap(reference)
+let userOne = {
+    email: "user@google.com",
+    upi: "user@ybl",
+}
+
+let userTwo = userOne
+
+userTwo.email = "shivanipal.8947.gmail.com"
+console.log(userOne.email);
+console.log(userTwo.email);
+
