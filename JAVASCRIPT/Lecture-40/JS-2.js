@@ -1,6 +1,7 @@
-                                         //    var()
- // var age=26;
-                                         // if()
+//Primitive datatype(string,number,boolean,undefined,bigint,symbol)
+//    var()
+// var age=26;
+// if()
 // if ( true) {
 //     console.log(age);
 // }
@@ -10,18 +11,18 @@
 //     console.log(age);
 // }
 // solve();
-                                        //  let()
+//  let()
 // {
 // let a=10;
 // console.log(a);}
 
 // let a=18;
 // a=" shivi";
-                                        // const
+// const
 // const a = 28;
 // console.log(a);
 
-             // Num_Datatype
+// Num_Datatype
 // let marks=78;                 //defined marks//
 // marks="Shivi";                //string//
 // marks=true;                   //boolean//
@@ -32,5 +33,14 @@
 // let marks;                                  //UnDefined//
 // console.log(marks);
 
-marks=false;
-console.log(typeof(marks));
+marks = false;
+console.log(typeof (marks));
+
+//non primitive(reference)-----> object,array,function
+console.log(typeof ({ name: "shivi" }));    //object (under curly braces)
+console.log(typeof ([1, 2, 3, 4, 5]));       //array
+
+const myFunction = function () {
+    console.log("Hello world!");
+}
+console.log(typeof myFunction);       //function
