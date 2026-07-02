@@ -1,54 +1,84 @@
-                            //unary Operators
-let a=3;
-let b=4;
+//unary Operators
+let a = 3;
+let b = 4;
 console.log(a++);                //post Increment
 console.log(++a);                //pre Increment
 
 console.log(--a);                  //pre Decrement
 console.log(a--);                   //post Decrement
-                            // Binary Operators
+// Binary Operators
 // arithmetic operators
 
-console.log(a+b);
-console.log(a-b);
-console.log(a*b);
-console.log(a/b);
-console.log(a%b);
+console.log(a + b);
+console.log(a - b);
+console.log(a * b);
+console.log(a / b);
+console.log(a % b);
 
 //assignment operators
 
-console.log(a+=b);
-console.log(a-=b);
-console.log(a*=b);
-console.log(a/=b);
+console.log(a += b);
+console.log(a -= b);
+console.log(a *= b);
+console.log(a /= b);
 
 //Relational operators
-console.log( a>b);
-console.log(a<b);
-console.log( a>=b);
-console.log(a<=b);
-console.log(a==b);
-console.log(a!=b);
-console.log(a===b);
-console.log(a!==b); 
+console.log(a > b);
+console.log(a < b);
+console.log(a >= b);
+console.log(a <= b);
+console.log(a == b);
+console.log(a != b);
+console.log(a === b);
+console.log(a !== b);
 
 // Logical Operators
 // let ans =(true&& true&& true);
 // let ans=(false|| false|| true);
-let ans=!(true);
+let ans = !(true);
 console.log(ans);
 
-                                // Ternay Operators
-                                // (condition ? statement1:statement2)
- 
- let age=25;
-let status1 =(age>18? "i can vote":" i can't vote");
+// Ternay Operators
+// (condition ? statement1:statement2)
+
+let age = 25;
+let status1 = (age > 18 ? "i can vote" : " i can't vote");
 console.log(status1);
 
 // Bitwise Operators
 console.log(2 & 5);                 //AND Operator
 console.log(2 | 5);                 //OR Operator
 console.log(~(0));                  //NOT Operator
-console.log(2^2);                   //XOR Operator
-console.log(10>>1);                  //Right shift
-console.log(10<<1);                  //Left shift
+console.log(2 ^ 2);                   //XOR Operator
+console.log(10 >> 1);                  //Right shift
+console.log(10 << 1);                  //Left shift
+
+
+// comparison
+// Comparison
+
+console.log("2" > 2);      // false (Number("2") = 2 → 2 > 2)
+
+console.log("02" == 2);    // true (== converts "02" to number)
+
+console.log("2" === 2);    // false (=== checks value and datatype)
+
+
+
+console.log(null > 0);     // false (null → 0, 0 > 0)
+
+console.log(null < 0);     // false (null → 0, 0 < 0)
+
+console.log(null == 0);    // false (null only equals undefined)
+
+console.log(null >= 0);    // true  (null → 0, 0 >= 0)
+
+
+
+console.log(undefined > 0);   // false (undefined → NaN)
+
+console.log(undefined < 0);   // false (undefined → NaN)
+
+console.log(undefined == 0);  // false (undefined only equals null)
+
+console.log(undefined >= 0);  // false (undefined → NaN)
