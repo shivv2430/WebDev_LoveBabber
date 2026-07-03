@@ -39,6 +39,6 @@ console.log(url.replace('%20', '-'));
 console.log(url.includes('shivani'));
 console.log(url.includes('hello'));
 
-const n = "Shivani-ka-Bhaip";
+const n = "Shivani-ki-mail-id";
 console.log(n.split('-'));
 
