@@ -44,3 +44,5 @@ console.log(myArr)
 //splice method -> changes the original array by removing, replacing elements 
 console.log(myArr.splice(1, 3))
 console.log(myArr)
+
+
