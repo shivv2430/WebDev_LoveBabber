@@ -64,3 +64,37 @@ console.log(Object.keys(tinderUser)) // [ 'Userid', 'name', 'isLoggedIn' ]
 console.log(Object.values(tinderUser)) // [ '123', 'shivani', false ]
 console.log(Object.entries(tinderUser)) // [ [ 'Userid', '123' ], [ 'name', 'shivani' ], [ 'isLoggedIn', false ] ]
 console.log(tinderUser.hasOwnProperty('name')) // true
+
+
+const course = {
+    name: "js in hindi",
+    price: "free",
+    courseInstructor: "hitesh"
+}
+
+// course.courseInstructor
+const { courseInstructor: instructor } = course
+console.log(instructor) //hitesh
+
+
+//{} = deconstructor
+const navbar = ({ company }) => {
+}
+navbar(company = "hitesh")
+
+
+//JSON format
+
+// (api in object)
+// {
+//     name :"shivani",
+//     coursename : " JS in hindi",
+//     price : "free"
+// }
+
+// (api in array) 
+//[
+// {},
+// {},
+// {}
+// ]
