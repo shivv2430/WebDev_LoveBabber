@@ -8,7 +8,7 @@
     font-family: 'Poppins', sans-serif;
 }
 
-LIGHT THEME:root {
+:root {
     /* Background */
     --bg-color: #EEF4FF;
     --card-color: #FFFFFF;
@@ -44,12 +44,12 @@ LIGHT THEME:root {
     --border: #334155;
 }
 
-BODY body {
+body {
     background: var(--bg-color);
     transition: .4s;
 }
 
-HERO .hero {
+.hero {
     width: 100%;
     height: 100vh;
     background: var(--bg-color);
@@ -101,6 +101,11 @@ nav ul li a:hover {
     width: 30px;
     cursor: pointer;
     margin-left: 25px;
+}
+
+.logo-text {
+    font-size: 24px;
+    color: var(--text-color);
 }
 
 /* HERO CONTENT */
