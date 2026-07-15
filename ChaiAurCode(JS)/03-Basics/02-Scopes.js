@@ -23,3 +23,49 @@ if (true) {
 }
 
 console.log(a);
+
+//Nested-Scope
+function one() {
+    const username = "shivi"
+
+    function two() {
+        const website = "youtube"
+        console.log(username); //accessible
+    }
+    // console.log(website); //not accessible
+    // two();
+}
+
+// one();
+
+//Important
+if (true) {
+    const username = "shivi"
+    if (username === "shivi") {
+        const website = " youtube"
+        console.log(username);
+        console.log(website);
+        console.log(username + website);
+    }
+    // console.log(username); //not give output (error)
+    console.log(website);
+}
+console.log(username); //not give output(error)
+
+
+
+//++++++++++++++++++++++interesting++++++++++++++++++++++++++++++++++
+
+//addOne ----> 6
+function addOne(number1) {
+    return number1 + 1
+}
+console.log(addOne(5)) //6
+
+
+//addTwo(5) ---->error
+const addTwo = function (num) {
+    return num + 2;
+}
+console.log(addTwo(5));
+
