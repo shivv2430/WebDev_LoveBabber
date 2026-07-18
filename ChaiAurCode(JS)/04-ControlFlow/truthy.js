@@ -29,6 +29,8 @@ if (Object.keys(emptyObj).length === 0) {
 else {
     console.log("Object is not empty");
 }
+
+
 //Nullish Coalescing Operator (??) :: null undefined
 
 let val1;
@@ -44,3 +46,8 @@ console.log(val1);   //output:15
 val1 = null ?? 10 ?? 20;
 console.log(val1);   //output:10
 
+//Terniary Operator
+//Condition ? exprIfTrue : exprIfFalse
+
+const iceTeaPrice = 100;
+iceTeaPrice <= 80 ? console.log("less than 80") : console.log("more than 80");
