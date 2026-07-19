@@ -28,3 +28,22 @@ for (let i = 0; i < myArray.length; i++) {
 for (let i = 1; i <= 10; i++) {
 
 }
+
+//break
+for (let i = 1; i <= 10; i++) {
+
+    if (i == 5) {
+        console.log("Detected 5")
+        break;
+    }
+    console.log(`value is : ${i}`)
+}
+
+//continue
+for (let i = 1; i <= 10; i++) {
+    if (i == 5) {
+        console.log("5 is skipped")
+        continue;
+    }
+    console.log(`value is : ${i}`);
+}
