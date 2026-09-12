@@ -1,25 +1,25 @@
 //====== Filter in JS======
-// const coding = ['Javascript', "Python", "Java", "C++", "Python", "Ruby", "Perl"]
+const coding = ['Javascript', "Python", "Java", "C++", "Python", "Ruby", "Perl"]
 
-// //forEach does not return anything
-// const values = coding.forEach((item) => {
-//     console.log(item)
-// })
+//forEach does not return anything
+const values = coding.forEach((item) => {
+    console.log(item)
+})
 
-// console.log(values)
+console.log(values)
 
-// const MyNums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-// const newNums = MyNums.filter((num) => {
-//     return num > 4
-// })
-// const newNums = []
+const MyNums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+const newNum = MyNums.filter((num) => {
+    return num > 4
+})
+const NewNums = []
 
-// MyNums.forEach((num) => {
-//     if (num > 4) {
-//         newNums.push(num)
-//     }
-// })
-// console.log(newNums)
+MyNums.forEach((num) => {
+    if (num > 4) {
+        NewNums.push(num)
+    }
+})
+console.log(NewNums)
 
 const books = [
     { title: "Book One", genre: "Sci-Fi", publish: 1983, Edition: 2004 },
@@ -41,3 +41,27 @@ const yrbooks = books.filter((bk) => {
 })
 console.log(userBooks)
 console.log(yrbooks)
+
+
+//====Map in JS======
+
+const myNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+const newNumbers = myNumbers.map((num) => {
+    return num + 10
+})
+
+console.log(newNumbers);
+
+
+//====Chaining======
+const Nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+const newNums = Nums
+    .map((num) => { return num * 10 })
+    .filter((num) => { return num >= 40 })
+    .map((num) => { return num * 2 })
+    .filter((num) => { return num >= 50 })
+
+console.log(newNums);
+
