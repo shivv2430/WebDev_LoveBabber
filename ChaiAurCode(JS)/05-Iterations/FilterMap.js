@@ -65,3 +65,38 @@ const newNums = Nums
 
 console.log(newNums);
 
+//======Reduce in Js=========
+
+const arr = [1, 2, 3]
+
+const result = arr.reduce(function (accumulator, currentValue) {
+    console.log(`acc: ${accumulator},currentValue: ${currentValue}`);
+    return accumulator + currentValue
+}, 0)
+
+const shoppingCard = [
+    {
+        itemName: "JS",
+        price: 2999
+    },
+    {
+        itemName: "Python",
+        price: 3999
+    },
+    {
+        itemName: "Java",
+        price: 4999
+    },
+    {
+        itemName: "C++",
+        price: 5999
+    },
+    {
+        itemName: "web dev",
+        price: 6999
+    },
+
+]
+//without curley braces (implicit return)
+const total = shoppingCard.reduce((acc, item) => acc + item.price, 0)
+console.log(total)
