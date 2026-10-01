@@ -10,18 +10,25 @@
     
 </body>
 <script>
+    //using dom--create element
     const div = document.createElement('div');
     console.log(div);
+    
+    //set id and class name
     div.className = "main"
     div.id = Math.round(Math.random() * 10 +1)
 
+    //set attribute
     div.setAttribute("title","generated title")
 
     div.style.backgroundColor = "red"
     div.style.padding = "10px"
-    // div.innerHTML = "four"  
+
+    //add text element in the div
+    // div.innerHTML = "four" 
     const addText = document.createTextNode("four")
     div.appendChild(addText)
+    
     document.body.appendChild(div)
 </script>
 </html>
